@@ -1,0 +1,141 @@
+// Gradle build script for asm Maven artifacts
+
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+}
+
+ext {
+    artifact = 'asm-all'
+    version = '3.1.1'
+    baseName = "${artifact}-${version}"
+}
+
+description = 'A very small and fast Java bytecode manipulation framework'
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+tasks.withType(JavaCompile) { // compile-time options:
+    options.compilerArgs << '-Xdiags:verbose'
+    //options.compilerArgs << '-Xlint:unchecked'
+    options.deprecation = true
+    options.encoding = 'UTF-8'
+}
+
+javadoc {
+    // Disable doclint for JDK8+.
+    if (JavaVersion.current().isJava8Compatible()){
+        options.addStringOption('Xdoclint:none', '-quiet')
+    }
+}
+
+// custom tasks for creating source/javadoc JARs
+jar {
+    archiveBaseName = project.ext.baseName
+}
+
+task javadocJar(type: Jar) {
+    archiveBaseName = project.ext.baseName
+    classifier = 'javadoc'
+    dependsOn 'javadoc'
+    description 'Create a JAR of javadoc.'
+    from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    archiveBaseName = project.ext.baseName
+    classifier = 'sources'
+    dependsOn 'classes'
+    description 'Create a JAR of sourcecode.'
+    from sourceSets.main.allJava
+}
+
+build.dependsOn('pom', 'pomAsc')
+task('pom', type: Copy) {
+    dependsOn 'generatePomFileForMavenPublication'
+    from "${buildDir}/publications/maven/pom-default.xml"
+    into "${buildDir}/libs"
+    rename 'pom-default.xml', baseName + '.pom'
+}
+task('pomAsc', type: Copy) {
+    dependsOn 'signMavenPublication'
+    from "${buildDir}/publications/maven/pom-default.xml.asc"
+    into "${buildDir}/libs"
+    rename 'pom-default.xml.asc', baseName + '.pom.asc'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact javadocJar
+            artifact sourcesJar
+            artifactId artifact
+            from components.java
+            groupId 'com.github.stephengold'
+            pom {
+                description = project.description
+                developers {
+                    developer {
+                        name = 'Eric Bruneton'
+                    }
+                    developer {
+                        name = 'Eugene Kuleshov'
+                    }
+                    developer {
+                        name = 'Niko Matsakis'
+                    }
+                    developer {
+                        name = 'Chris Nokleberg'
+                    }
+                    developer {
+                        name = 'Juozas Baliuka'
+                    }
+                    developer {
+                        name = 'Thomas Hallgren'
+                    }
+                    developer {
+                        name = 'Bing Ran'
+                    }
+                }
+                licenses {
+                    license {
+                        distribution = 'repo'
+                        name = 'New BSD (3-clause) License'
+                        url = 'https://opensource.org/licenses/BSD-3-Clause'
+                    }
+                }
+                name = 'com.github.stephengold:' + artifact
+                scm {
+                    connection = 'scm:git:git://github.com/stephengold/asm.git'
+                    developerConnection = 'scm:git:ssh://github.com:stephengold/asm.git'
+                    url = 'https://github.com/stephengold/asm/tree/master'
+                }
+                url = 'https://github.com/stephengold/asm'
+            }
+            version project.ext.version
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username = project.hasProperty('ossrhUsername') ? ossrhUsername : 'Unknown user'
+                password = project.hasProperty('ossrhPassword') ? ossrhPassword : 'Unknown password'
+            }
+            name = 'OSSRH'
+            url = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
+        }
+    }
+}
+generateMetadataFileForMavenPublication.dependsOn('pom')
+publishToMavenLocal.doLast {
+    println 'published to ' + baseName
+}
+
+signing {
+    sign publishing.publications.maven
+}
+tasks.withType(Sign) {
+    onlyIf { gradle.rootProject.hasProperty('signing.keyId') }
+}
