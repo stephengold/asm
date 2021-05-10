@@ -90,7 +90,6 @@ public class MethodNode extends MemberNode implements MethodVisitor {
      * The runtime visible parameter annotations of this method. These lists are
      * lists of {@link AnnotationNode} objects. May be <tt>null</tt>.
      * 
-     * @associates org.objectweb.asm.tree.AnnotationNode
      * @label invisible parameters
      */
     public List[] visibleParameterAnnotations;
@@ -99,7 +98,6 @@ public class MethodNode extends MemberNode implements MethodVisitor {
      * The runtime invisible parameter annotations of this method. These lists
      * are lists of {@link AnnotationNode} objects. May be <tt>null</tt>.
      * 
-     * @associates org.objectweb.asm.tree.AnnotationNode
      * @label visible parameters
      */
     public List[] invisibleParameterAnnotations;
@@ -108,7 +106,6 @@ public class MethodNode extends MemberNode implements MethodVisitor {
      * The instructions of this method. This list is a list of
      * {@link AbstractInsnNode} objects.
      * 
-     * @associates org.objectweb.asm.tree.AbstractInsnNode
      * @label instructions
      */
     public InsnList instructions;
@@ -116,8 +113,6 @@ public class MethodNode extends MemberNode implements MethodVisitor {
     /**
      * The try catch blocks of this method. This list is a list of
      * {@link TryCatchBlockNode} objects.
-     * 
-     * @associates org.objectweb.asm.tree.TryCatchBlockNode
      */
     public List tryCatchBlocks;
 
@@ -134,8 +129,6 @@ public class MethodNode extends MemberNode implements MethodVisitor {
     /**
      * The local variables of this method. This list is a list of
      * {@link LocalVariableNode} objects. May be <tt>null</tt>
-     * 
-     * @associates org.objectweb.asm.tree.LocalVariableNode
      */
     public List localVariables;
 

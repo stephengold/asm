@@ -46,7 +46,6 @@ public abstract class MemberNode {
      * The runtime visible annotations of this class, field or method. This list
      * is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
      * 
-     * @associates org.objectweb.asm.tree.AnnotationNode
      * @label visible
      */
     public List visibleAnnotations;
@@ -55,7 +54,6 @@ public abstract class MemberNode {
      * The runtime invisible annotations of this class, field or method. This
      * list is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
      * 
-     * @associates org.objectweb.asm.tree.AnnotationNode
      * @label invisible
      */
     public List invisibleAnnotations;
@@ -63,8 +61,6 @@ public abstract class MemberNode {
     /**
      * The non standard attributes of this class, field or method. This list is
      * a list of {@link Attribute} objects. May be <tt>null</tt>.
-     * 
-     * @associates org.objectweb.asm.Attribute
      */
     public List attrs;
 
