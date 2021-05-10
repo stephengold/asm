@@ -45,16 +45,12 @@ public abstract class MemberNode {
     /**
      * The runtime visible annotations of this class, field or method. This list
      * is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
-     * 
-     * @label visible
      */
     public List visibleAnnotations;
 
     /**
      * The runtime invisible annotations of this class, field or method. This
      * list is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
-     * 
-     * @label invisible
      */
     public List invisibleAnnotations;
 

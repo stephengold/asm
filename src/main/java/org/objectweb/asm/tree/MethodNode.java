@@ -89,24 +89,18 @@ public class MethodNode extends MemberNode implements MethodVisitor {
     /**
      * The runtime visible parameter annotations of this method. These lists are
      * lists of {@link AnnotationNode} objects. May be <tt>null</tt>.
-     * 
-     * @label invisible parameters
      */
     public List[] visibleParameterAnnotations;
 
     /**
      * The runtime invisible parameter annotations of this method. These lists
      * are lists of {@link AnnotationNode} objects. May be <tt>null</tt>.
-     * 
-     * @label visible parameters
      */
     public List[] invisibleParameterAnnotations;
 
     /**
      * The instructions of this method. This list is a list of
      * {@link AbstractInsnNode} objects.
-     * 
-     * @label instructions
      */
     public InsnList instructions;
 
