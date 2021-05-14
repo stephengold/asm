@@ -8,7 +8,7 @@ plugins {
 
 ext {
     artifact = 'asm-all'
-    version = '3.1.1'
+    version = '3.1.2-SNAPSHOT'
     baseName = "${artifact}-${version}"
 }
 
@@ -31,7 +31,8 @@ javadoc {
     }
 }
 
-// custom tasks for creating source/javadoc JARs
+// publishing tasks
+
 jar {
     archiveBaseName = project.ext.baseName
 }
@@ -132,6 +133,8 @@ generateMetadataFileForMavenPublication.dependsOn('pom')
 publishToMavenLocal.doLast {
     println 'published to ' + baseName
 }
+
+// signing tasks
 
 signing {
     sign publishing.publications.maven
