@@ -150,7 +150,7 @@ public class TraceMethodVisitor extends TraceAbstractVisitor implements
         TraceAnnotationVisitor tav = createTraceAnnotationVisitor();
         text.add(tav.getText());
         text.add(visible ? ") // parameter " : ") // invisible, parameter ");
-        text.add(new Integer(parameter));
+        text.add(parameter);
         text.add("\n");
         if (mv != null) {
             tav.av = mv.visitParameterAnnotation(parameter, desc, visible);

@@ -547,7 +547,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
                     value = new Byte(val);
 
                 } else if ("Ljava/lang/Character;".equals(desc)) {
-                    value = new Character(decode(val).charAt(0));
+                    value = decode(val).charAt(0);
 
                 } else if ("Ljava/lang/Boolean;".equals(desc)) {
                     value = Boolean.valueOf(val);
@@ -690,7 +690,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
             int minor = Integer.parseInt(attrs.getValue("minor"));
             cw = new ClassWriter(computeMax ? ClassWriter.COMPUTE_MAXS : 0);
             Map vals = new HashMap();
-            vals.put("version", new Integer(minor << 16 | major));
+            vals.put("version", minor << 16 | major);
             vals.put("access", attrs.getValue("access"));
             vals.put("name", attrs.getValue("name"));
             vals.put("parent", attrs.getValue("parent"));

@@ -288,8 +288,7 @@ public class SerialVersionUIDAdder extends ClassAdapter {
                 cv.visitField(Opcodes.ACC_FINAL + Opcodes.ACC_STATIC,
                         "serialVersionUID",
                         "J",
-                        null,
-                        new Long(computeSVUID()));
+                        null, computeSVUID());
             } catch (Throwable e) {
                 throw new RuntimeException("Error while computing SVUID for "
                         + name, e);
