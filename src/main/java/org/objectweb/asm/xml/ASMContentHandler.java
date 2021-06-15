@@ -322,7 +322,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
     static {
         String[] types = SAXCodeAdapter.TYPES;
         for (int i = 0; i < types.length; i++) {
-            TYPES.put(types[i], new Integer(i));
+            TYPES.put(types[i], Integer.valueOf(i));
         }
     }
 
@@ -538,13 +538,13 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
                         || "B".equals(desc) || "C".equals(desc)
                         || "Z".equals(desc))
                 {
-                    value = new Integer(val);
+                    value = Integer.valueOf(val);
 
                 } else if ("Ljava/lang/Short;".equals(desc)) {
-                    value = new Short(val);
+                    value = Short.valueOf(val);
 
                 } else if ("Ljava/lang/Byte;".equals(desc)) {
-                    value = new Byte(val);
+                    value = Byte.valueOf(val);
 
                 } else if ("Ljava/lang/Character;".equals(desc)) {
                     value = decode(val).charAt(0);
@@ -554,14 +554,14 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
 
                 } else if ("Ljava/lang/Long;".equals(desc) || "J".equals(desc))
                 {
-                    value = new Long(val);
+                    value = Long.valueOf(val);
                 } else if ("Ljava/lang/Float;".equals(desc) || "F".equals(desc))
                 {
-                    value = new Float(val);
+                    value = Float.valueOf(val);
                 } else if ("Ljava/lang/Double;".equals(desc)
                         || "D".equals(desc))
                 {
-                    value = new Double(val);
+                    value = Double.valueOf(val);
                 } else if (Type.getDescriptor(Type.class).equals(desc)) {
                     value = Type.getType(val);
 
