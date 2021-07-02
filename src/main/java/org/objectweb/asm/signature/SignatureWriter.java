@@ -70,6 +70,7 @@ public class SignatureWriter implements SignatureVisitor {
     // Implementation of the SignatureVisitor interface
     // ------------------------------------------------------------------------
 
+    @Override
     public void visitFormalTypeParameter(final String name) {
         if (!hasFormals) {
             hasFormals = true;
@@ -79,24 +80,29 @@ public class SignatureWriter implements SignatureVisitor {
         buf.append(':');
     }
 
+    @Override
     public SignatureVisitor visitClassBound() {
         return this;
     }
 
+    @Override
     public SignatureVisitor visitInterfaceBound() {
         buf.append(':');
         return this;
     }
 
+    @Override
     public SignatureVisitor visitSuperclass() {
         endFormals();
         return this;
     }
 
+    @Override
     public SignatureVisitor visitInterface() {
         return this;
     }
 
+    @Override
     public SignatureVisitor visitParameterType() {
         endFormals();
         if (!hasParameters) {
@@ -106,6 +112,7 @@ public class SignatureWriter implements SignatureVisitor {
         return this;
     }
 
+    @Override
     public SignatureVisitor visitReturnType() {
         endFormals();
         if (!hasParameters) {
@@ -115,32 +122,38 @@ public class SignatureWriter implements SignatureVisitor {
         return this;
     }
 
+    @Override
     public SignatureVisitor visitExceptionType() {
         buf.append('^');
         return this;
     }
 
+    @Override
     public void visitBaseType(final char descriptor) {
         buf.append(descriptor);
     }
 
+    @Override
     public void visitTypeVariable(final String name) {
         buf.append('T');
         buf.append(name);
         buf.append(';');
     }
 
+    @Override
     public SignatureVisitor visitArrayType() {
         buf.append('[');
         return this;
     }
 
+    @Override
     public void visitClassType(final String name) {
         buf.append('L');
         buf.append(name);
         argumentStack *= 2;
     }
 
+    @Override
     public void visitInnerClassType(final String name) {
         endArguments();
         buf.append('.');
@@ -148,6 +161,7 @@ public class SignatureWriter implements SignatureVisitor {
         argumentStack *= 2;
     }
 
+    @Override
     public void visitTypeArgument() {
         if (argumentStack % 2 == 0) {
             ++argumentStack;
@@ -156,6 +170,7 @@ public class SignatureWriter implements SignatureVisitor {
         buf.append('*');
     }
 
+    @Override
     public SignatureVisitor visitTypeArgument(final char wildcard) {
         if (argumentStack % 2 == 0) {
             ++argumentStack;
@@ -167,6 +182,7 @@ public class SignatureWriter implements SignatureVisitor {
         return this;
     }
 
+    @Override
     public void visitEnd() {
         endArguments();
         buf.append(';');
@@ -177,6 +193,7 @@ public class SignatureWriter implements SignatureVisitor {
      * 
      * @return the signature that was built by this signature writer.
      */
+    @Override
     public String toString() {
         return buf.toString();
     }

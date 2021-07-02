@@ -50,15 +50,18 @@ public class RemappingFieldAdapter implements FieldVisitor {
         this.remapper = remapper;
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
         AnnotationVisitor av = fv.visitAnnotation(desc, visible);
         return av == null ? null : new RemappingAnnotationAdapter(av, remapper);
     }
 
+    @Override
     public void visitAttribute(Attribute attr) {
         fv.visitAttribute(attr);
     }
 
+    @Override
     public void visitEnd() {
         fv.visitEnd();
     }

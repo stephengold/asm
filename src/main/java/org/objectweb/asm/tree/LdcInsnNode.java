@@ -60,14 +60,17 @@ public class LdcInsnNode extends AbstractInsnNode {
         this.cst = cst;
     }
 
+    @Override
     public int getType() {
         return LDC_INSN;
     }
 
+    @Override
     public void accept(final MethodVisitor mv) {
         mv.visitLdcInsn(cst);
     }
 
+    @Override
     public AbstractInsnNode clone(final Map labels) {
         return new LdcInsnNode(cst);
     }

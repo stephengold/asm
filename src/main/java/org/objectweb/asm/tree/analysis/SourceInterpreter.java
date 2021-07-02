@@ -47,10 +47,12 @@ import org.objectweb.asm.tree.MethodInsnNode;
  */
 public class SourceInterpreter implements Opcodes, Interpreter {
 
+    @Override
     public Value newValue(final Type type) {
         return new SourceValue(type == null ? 1 : type.getSize());
     }
 
+    @Override
     public Value newOperation(final AbstractInsnNode insn) {
         int size;
         switch (insn.getOpcode()) {
@@ -73,10 +75,12 @@ public class SourceInterpreter implements Opcodes, Interpreter {
         return new SourceValue(size, insn);
     }
 
+    @Override
     public Value copyOperation(final AbstractInsnNode insn, final Value value) {
         return new SourceValue(value.getSize(), insn);
     }
 
+    @Override
     public Value unaryOperation(final AbstractInsnNode insn, final Value value)
     {
         int size;
@@ -100,6 +104,7 @@ public class SourceInterpreter implements Opcodes, Interpreter {
         return new SourceValue(size, insn);
     }
 
+    @Override
     public Value binaryOperation(
         final AbstractInsnNode insn,
         final Value value1,
@@ -133,6 +138,7 @@ public class SourceInterpreter implements Opcodes, Interpreter {
         return new SourceValue(size, insn);
     }
 
+    @Override
     public Value ternaryOperation(
         final AbstractInsnNode insn,
         final Value value1,
@@ -142,6 +148,7 @@ public class SourceInterpreter implements Opcodes, Interpreter {
         return new SourceValue(1, insn);
     }
 
+    @Override
     public Value naryOperation(final AbstractInsnNode insn, final List values) {
         int size;
         if (insn.getOpcode() == MULTIANEWARRAY) {
@@ -152,6 +159,7 @@ public class SourceInterpreter implements Opcodes, Interpreter {
         return new SourceValue(size, insn);
     }
 
+    @Override
     public Value merge(final Value v, final Value w) {
         SourceValue dv = (SourceValue) v;
         SourceValue dw = (SourceValue) w;

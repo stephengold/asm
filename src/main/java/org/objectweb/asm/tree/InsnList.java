@@ -576,10 +576,12 @@ public class InsnList {
             }
         }
 
+        @Override
         public boolean hasNext() {
             return next != null;
         }
 
+        @Override
         public Object next() {
             if (next == null) {
                 throw new NoSuchElementException();
@@ -590,15 +592,18 @@ public class InsnList {
             return result;
         }
 
+        @Override
         public void remove() {
             InsnList.this.remove(prev);
             prev = prev.prev;
         }
 
+        @Override
         public boolean hasPrevious() {
             return prev != null;
         }
 
+        @Override
         public Object previous() {
             AbstractInsnNode result = prev;
             next = result;
@@ -606,6 +611,7 @@ public class InsnList {
             return result;
         }
 
+        @Override
         public int nextIndex() {
             if (next == null) {
                 return size();
@@ -616,6 +622,7 @@ public class InsnList {
             return next.index;
         }
 
+        @Override
         public int previousIndex() {
             if (prev == null) {
                 return -1;
@@ -626,11 +633,13 @@ public class InsnList {
             return prev.index;
         }
 
+        @Override
         public void add(Object o) {
             InsnList.this.insertBefore(next, (AbstractInsnNode) o);
             prev = (AbstractInsnNode) o;
         }
 
+        @Override
         public void set(Object o) {
             InsnList.this.set(next.prev, (AbstractInsnNode) o);
             prev = (AbstractInsnNode) o;

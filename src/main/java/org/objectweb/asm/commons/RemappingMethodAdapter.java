@@ -53,6 +53,7 @@ public class RemappingMethodAdapter extends LocalVariablesSorter {
         this.remapper = renamer;
     }
 
+    @Override
     public void visitFieldInsn(
         int opcode,
         String owner,
@@ -65,6 +66,7 @@ public class RemappingMethodAdapter extends LocalVariablesSorter {
                 remapper.mapDesc(desc));
     }
 
+    @Override
     public void visitMethodInsn(
         int opcode,
         String owner,
@@ -77,18 +79,22 @@ public class RemappingMethodAdapter extends LocalVariablesSorter {
                 remapper.mapMethodDesc(desc));
     }
 
+    @Override
     public void visitTypeInsn(int opcode, String type) {
         super.visitTypeInsn(opcode, remapper.mapType(type));
     }
 
+    @Override
     public void visitLdcInsn(Object cst) {
         super.visitLdcInsn(remapper.mapValue(cst));
     }
 
+    @Override
     public void visitMultiANewArrayInsn(String desc, int dims) {
         super.visitMultiANewArrayInsn(remapper.mapDesc(desc), dims);
     }
 
+    @Override
     public void visitTryCatchBlock(
         Label start,
         Label end,
@@ -99,6 +105,7 @@ public class RemappingMethodAdapter extends LocalVariablesSorter {
                 type == null ? null : remapper.mapType(type));
     }
     
+    @Override
     public void visitLocalVariable(
         String name,
         String desc,
@@ -115,16 +122,19 @@ public class RemappingMethodAdapter extends LocalVariablesSorter {
                 index);
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(String desc, boolean visible) {
         AnnotationVisitor av = mv.visitAnnotation(desc, visible);
         return av == null ? av : new RemappingAnnotationAdapter(av, remapper);
     }
     
+    @Override
     public AnnotationVisitor visitAnnotationDefault() {
         AnnotationVisitor av = mv.visitAnnotationDefault();
         return av == null ? av : new RemappingAnnotationAdapter(av, remapper);
     }
     
+    @Override
     public AnnotationVisitor visitParameterAnnotation(
         int parameter,
         String desc,
@@ -136,6 +146,7 @@ public class RemappingMethodAdapter extends LocalVariablesSorter {
         return av == null ? av : new RemappingAnnotationAdapter(av, remapper);
     }
     
+    @Override
     public void visitFrame(
         int type,
         int nLocal,

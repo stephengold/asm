@@ -48,6 +48,7 @@ public class EmptyVisitor implements
         AnnotationVisitor
 {
 
+    @Override
     public void visit(
         final int version,
         final int access,
@@ -58,9 +59,11 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitSource(final String source, final String debug) {
     }
 
+    @Override
     public void visitOuterClass(
         final String owner,
         final String name,
@@ -68,6 +71,7 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String desc,
         final boolean visible)
@@ -75,9 +79,11 @@ public class EmptyVisitor implements
         return this;
     }
 
+    @Override
     public void visitAttribute(final Attribute attr) {
     }
 
+    @Override
     public void visitInnerClass(
         final String name,
         final String outerName,
@@ -86,6 +92,7 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public FieldVisitor visitField(
         final int access,
         final String name,
@@ -96,6 +103,7 @@ public class EmptyVisitor implements
         return this;
     }
 
+    @Override
     public MethodVisitor visitMethod(
         final int access,
         final String name,
@@ -106,13 +114,16 @@ public class EmptyVisitor implements
         return this;
     }
 
+    @Override
     public void visitEnd() {
     }
 
+    @Override
     public AnnotationVisitor visitAnnotationDefault() {
         return this;
     }
 
+    @Override
     public AnnotationVisitor visitParameterAnnotation(
         final int parameter,
         final String desc,
@@ -121,9 +132,11 @@ public class EmptyVisitor implements
         return this;
     }
 
+    @Override
     public void visitCode() {
     }
 
+    @Override
     public void visitFrame(
         final int type,
         final int nLocal,
@@ -133,18 +146,23 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitInsn(final int opcode) {
     }
 
+    @Override
     public void visitIntInsn(final int opcode, final int operand) {
     }
 
+    @Override
     public void visitVarInsn(final int opcode, final int var) {
     }
 
+    @Override
     public void visitTypeInsn(final int opcode, final String type) {
     }
 
+    @Override
     public void visitFieldInsn(
         final int opcode,
         final String owner,
@@ -153,6 +171,7 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitMethodInsn(
         final int opcode,
         final String owner,
@@ -161,18 +180,23 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitJumpInsn(final int opcode, final Label label) {
     }
 
+    @Override
     public void visitLabel(final Label label) {
     }
 
+    @Override
     public void visitLdcInsn(final Object cst) {
     }
 
+    @Override
     public void visitIincInsn(final int var, final int increment) {
     }
 
+    @Override
     public void visitTableSwitchInsn(
         final int min,
         final int max,
@@ -181,6 +205,7 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitLookupSwitchInsn(
         final Label dflt,
         final int[] keys,
@@ -188,9 +213,11 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitMultiANewArrayInsn(final String desc, final int dims) {
     }
 
+    @Override
     public void visitTryCatchBlock(
         final Label start,
         final Label end,
@@ -199,6 +226,7 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitLocalVariable(
         final String name,
         final String desc,
@@ -209,15 +237,19 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public void visitLineNumber(final int line, final Label start) {
     }
 
+    @Override
     public void visitMaxs(final int maxStack, final int maxLocals) {
     }
 
+    @Override
     public void visit(final String name, final Object value) {
     }
 
+    @Override
     public void visitEnum(
         final String name,
         final String desc,
@@ -225,6 +257,7 @@ public class EmptyVisitor implements
     {
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String name,
         final String desc)
@@ -232,6 +265,7 @@ public class EmptyVisitor implements
         return this;
     }
 
+    @Override
     public AnnotationVisitor visitArray(final String name) {
         return this;
     }

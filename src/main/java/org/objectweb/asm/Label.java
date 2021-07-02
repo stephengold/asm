@@ -520,6 +520,7 @@ public class Label {
      * 
      * @return a string representation of this label.
      */
+    @Override
     public String toString() {
         return "L" + System.identityHashCode(this);
     }

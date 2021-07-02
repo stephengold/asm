@@ -49,6 +49,7 @@ import org.objectweb.asm.tree.TypeInsnNode;
  */
 public class BasicInterpreter implements Opcodes, Interpreter {
 
+    @Override
     public Value newValue(final Type type) {
         if (type == null) {
             return BasicValue.UNINITIALIZED_VALUE;
@@ -76,6 +77,7 @@ public class BasicInterpreter implements Opcodes, Interpreter {
         }
     }
 
+    @Override
     public Value newOperation(final AbstractInsnNode insn) {
         switch (insn.getOpcode()) {
             case ACONST_NULL:
@@ -127,12 +129,14 @@ public class BasicInterpreter implements Opcodes, Interpreter {
         }
     }
 
+    @Override
     public Value copyOperation(final AbstractInsnNode insn, final Value value)
             throws AnalyzerException
     {
         return value;
     }
 
+    @Override
     public Value unaryOperation(final AbstractInsnNode insn, final Value value)
             throws AnalyzerException
     {
@@ -221,6 +225,7 @@ public class BasicInterpreter implements Opcodes, Interpreter {
         }
     }
 
+    @Override
     public Value binaryOperation(
         final AbstractInsnNode insn,
         final Value value1,
@@ -293,6 +298,7 @@ public class BasicInterpreter implements Opcodes, Interpreter {
         }
     }
 
+    @Override
     public Value ternaryOperation(
         final AbstractInsnNode insn,
         final Value value1,
@@ -302,6 +308,7 @@ public class BasicInterpreter implements Opcodes, Interpreter {
         return null;
     }
 
+    @Override
     public Value naryOperation(final AbstractInsnNode insn, final List values)
             throws AnalyzerException
     {
@@ -312,6 +319,7 @@ public class BasicInterpreter implements Opcodes, Interpreter {
         }
     }
 
+    @Override
     public Value merge(final Value v, final Value w) {
         if (!v.equals(w)) {
             return BasicValue.UNINITIALIZED_VALUE;
