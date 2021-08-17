@@ -143,7 +143,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
                         "type",
                         "type",
                         "",
-                        TYPES[((Integer) type).intValue()]);
+                        TYPES[(Integer) type]);
             } else {
                 attrs.addAttribute("", "type", "type", "", "uninitialized");
                 attrs.addAttribute("",

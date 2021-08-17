@@ -521,7 +521,7 @@ public class TraceMethodVisitor extends TraceAbstractVisitor implements
                     appendDescriptor(INTERNAL_NAME, desc);
                 }
             } else if (o[i] instanceof Integer) {
-                switch (((Integer) o[i]).intValue()) {
+                switch ((Integer) o[i]) {
                     case 0:
                         appendDescriptor(FIELD_DESCRIPTOR, "T");
                         break;

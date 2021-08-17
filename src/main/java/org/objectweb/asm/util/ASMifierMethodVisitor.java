@@ -385,7 +385,7 @@ public class ASMifierMethodVisitor extends ASMifierAbstractVisitor implements
             if (o[i] instanceof String) {
                 appendConstant(o[i]);
             } else if (o[i] instanceof Integer) {
-                switch (((Integer) o[i]).intValue()) {
+                switch ((Integer) o[i]) {
                     case 0:
                         buf.append("Opcodes.TOP");
                         break;

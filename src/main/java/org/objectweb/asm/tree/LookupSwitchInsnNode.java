@@ -97,7 +97,7 @@ public class LookupSwitchInsnNode extends AbstractInsnNode {
     public void accept(final MethodVisitor mv) {
         int[] keys = new int[this.keys.size()];
         for (int i = 0; i < keys.length; ++i) {
-            keys[i] = ((Integer) this.keys.get(i)).intValue();
+            keys[i] = (Integer) this.keys.get(i);
         }
         Label[] labels = new Label[this.labels.size()];
         for (int i = 0; i < labels.length; ++i) {

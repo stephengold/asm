@@ -124,14 +124,14 @@ final class AnnotationWriter implements AnnotationVisitor {
         if (value instanceof String) {
             bv.put12('s', cw.newUTF8((String) value));
         } else if (value instanceof Byte) {
-            bv.put12('B', cw.newInteger(((Byte) value).byteValue()).index);
+            bv.put12('B', cw.newInteger((Byte) value).index);
         } else if (value instanceof Boolean) {
-            int v = ((Boolean) value).booleanValue() ? 1 : 0;
+            int v = ((Boolean) value) ? 1 : 0;
             bv.put12('Z', cw.newInteger(v).index);
         } else if (value instanceof Character) {
-            bv.put12('C', cw.newInteger(((Character) value).charValue()).index);
+            bv.put12('C', cw.newInteger((Character) value).index);
         } else if (value instanceof Short) {
-            bv.put12('S', cw.newInteger(((Short) value).shortValue()).index);
+            bv.put12('S', cw.newInteger((Short) value).index);
         } else if (value instanceof Type) {
             bv.put12('c', cw.newUTF8(((Type) value).getDescriptor()));
         } else if (value instanceof byte[]) {

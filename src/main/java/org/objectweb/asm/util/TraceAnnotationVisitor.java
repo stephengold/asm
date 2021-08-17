@@ -74,21 +74,21 @@ public class TraceAnnotationVisitor extends TraceAbstractVisitor implements
         } else if (value instanceof Type) {
             visitType((Type) value);
         } else if (value instanceof Byte) {
-            visitByte(((Byte) value).byteValue());
+            visitByte((Byte) value);
         } else if (value instanceof Boolean) {
-            visitBoolean(((Boolean) value).booleanValue());
+            visitBoolean((Boolean) value);
         } else if (value instanceof Short) {
-            visitShort(((Short) value).shortValue());
+            visitShort((Short) value);
         } else if (value instanceof Character) {
-            visitChar(((Character) value).charValue());
+            visitChar((Character) value);
         } else if (value instanceof Integer) {
-            visitInt(((Integer) value).intValue());
+            visitInt((Integer) value);
         } else if (value instanceof Float) {
-            visitFloat(((Float) value).floatValue());
+            visitFloat((Float) value);
         } else if (value instanceof Long) {
-            visitLong(((Long) value).longValue());
+            visitLong((Long) value);
         } else if (value instanceof Double) {
-            visitDouble(((Double) value).doubleValue());
+            visitDouble((Double) value);
         } else if (value.getClass().isArray()) {
             buf.append('{');
             if (value instanceof byte[]) {

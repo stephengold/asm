@@ -728,7 +728,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
 
         public final void end(final String element) {
             Map vals = (HashMap) pop();
-            int version = ((Integer) vals.get("version")).intValue();
+            int version = (Integer) vals.get("version");
             int access = getAccess((String) vals.get("access"));
             String name = (String) vals.get("name");
             String signature = (String) vals.get("signature");
@@ -1145,8 +1145,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
 
         public void begin(final String name, final Attributes attrs) {
             String desc = attrs.getValue("desc");
-            boolean visible = Boolean.valueOf(attrs.getValue("visible"))
-                    .booleanValue();
+            boolean visible = Boolean.valueOf(attrs.getValue("visible"));
 
             Object v = peek();
             if (v instanceof ClassVisitor) {
@@ -1171,8 +1170,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
         public void begin(final String name, final Attributes attrs) {
             int parameter = Integer.parseInt(attrs.getValue("parameter"));
             String desc = attrs.getValue("desc");
-            boolean visible = Boolean.valueOf(attrs.getValue("visible"))
-                    .booleanValue();
+            boolean visible = Boolean.valueOf(attrs.getValue("visible"));
 
             push(((MethodVisitor) peek()).visitParameterAnnotation(parameter,
                     desc,

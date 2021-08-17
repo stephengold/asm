@@ -561,7 +561,7 @@ class MethodWriter implements MethodVisitor {
                     frame[frameIndex++] = Frame.OBJECT
                             | cw.addType((String) local[i]);
                 } else if (local[i] instanceof Integer) {
-                    frame[frameIndex++] = ((Integer) local[i]).intValue();
+                    frame[frameIndex++] = (Integer) local[i];
                 } else {
                     frame[frameIndex++] = Frame.UNINITIALIZED
                             | cw.addUninitializedType("",
@@ -573,7 +573,7 @@ class MethodWriter implements MethodVisitor {
                     frame[frameIndex++] = Frame.OBJECT
                             | cw.addType((String) stack[i]);
                 } else if (stack[i] instanceof Integer) {
-                    frame[frameIndex++] = ((Integer) stack[i]).intValue();
+                    frame[frameIndex++] = (Integer) stack[i];
                 } else {
                     frame[frameIndex++] = Frame.UNINITIALIZED
                             | cw.addUninitializedType("",
@@ -1790,7 +1790,7 @@ class MethodWriter implements MethodVisitor {
         if (type instanceof String) {
             stackMap.putByte(7).putShort(cw.newClass((String) type));
         } else if (type instanceof Integer) {
-            stackMap.putByte(((Integer) type).intValue());
+            stackMap.putByte((Integer) type);
         } else {
             stackMap.putByte(8).putShort(((Label) type).position);
         }

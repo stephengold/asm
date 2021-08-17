@@ -616,8 +616,8 @@ public class CheckMethodAdapter extends MethodAdapter {
         checkLabel(start, true, "start label");
         checkLabel(end, true, "end label");
         checkUnsignedShort(index, "Invalid variable index");
-        int s = ((Integer) labels.get(start)).intValue();
-        int e = ((Integer) labels.get(end)).intValue();
+        int s = (Integer) labels.get(start);
+        int e = (Integer) labels.get(end);
         if (e < s) {
             throw new IllegalArgumentException("Invalid start and end labels (end must be greater than start)");
         }
