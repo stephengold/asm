@@ -54,6 +54,7 @@ public class CheckAnnotationAdapter implements AnnotationVisitor {
         this.named = named;
     }
 
+    @Override
     public void visit(final String name, final Object value) {
         checkEnd();
         checkName(name);
@@ -74,6 +75,7 @@ public class CheckAnnotationAdapter implements AnnotationVisitor {
         }
     }
 
+    @Override
     public void visitEnum(
         final String name,
         final String desc,
@@ -90,6 +92,7 @@ public class CheckAnnotationAdapter implements AnnotationVisitor {
         }
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String name,
         final String desc)
@@ -102,6 +105,7 @@ public class CheckAnnotationAdapter implements AnnotationVisitor {
                 : av.visitAnnotation(name, desc));
     }
 
+    @Override
     public AnnotationVisitor visitArray(final String name) {
         checkEnd();
         checkName(name);
@@ -110,6 +114,7 @@ public class CheckAnnotationAdapter implements AnnotationVisitor {
                 : av.visitArray(name), false);
     }
 
+    @Override
     public void visitEnd() {
         checkEnd();
         end = true;

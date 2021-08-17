@@ -457,19 +457,23 @@ public class Processor {
             this.is = is;
         }
 
+        @Override
         public final void close() throws IOException {
         }
 
+        @Override
         public final int read() throws IOException {
             return is.read();
         }
 
+        @Override
         public final int read(final byte[] b, final int off, final int len)
                 throws IOException
         {
             return is.read(b, off, len);
         }
 
+        @Override
         public final int available() throws IOException {
             return is.available();
         }
@@ -509,6 +513,7 @@ public class Processor {
             this.optimizeEmptyElements = optimizeEmptyElements;
         }
 
+        @Override
         public final ContentHandler createContentHandler() {
             return new SAXWriter(w, optimizeEmptyElements);
         }
@@ -533,6 +538,7 @@ public class Processor {
             this.computeMax = computeMax;
         }
 
+        @Override
         public final ContentHandler createContentHandler() {
             return new ASMContentHandler(os, computeMax);
         }
@@ -561,6 +567,7 @@ public class Processor {
             this.outputHandler = outputHandler;
         }
 
+        @Override
         public final ContentHandler createContentHandler() {
             try {
                 TransformerHandler handler = saxtf.newTransformerHandler(templates);
@@ -585,6 +592,7 @@ public class Processor {
             this.subdocumentHandler = subdocumentHandler;
         }
 
+        @Override
         public final ContentHandler createContentHandler() {
             return subdocumentHandler;
         }
@@ -624,6 +632,7 @@ public class Processor {
             this.optimizeEmptyElements = optimizeEmptyElements;
         }
 
+        @Override
         public final void startElement(
             final String ns,
             final String localName,
@@ -652,6 +661,7 @@ public class Processor {
             }
         }
 
+        @Override
         public final void endElement(
             final String ns,
             final String localName,
@@ -673,6 +683,7 @@ public class Processor {
             }
         }
 
+        @Override
         public final void endDocument() throws SAXException {
             try {
                 w.flush();
@@ -683,6 +694,7 @@ public class Processor {
             }
         }
 
+        @Override
         public final void comment(final char[] ch, final int off, final int len)
                 throws SAXException
         {
@@ -700,6 +712,7 @@ public class Processor {
             }
         }
 
+        @Override
         public final void startDTD(
             final String arg0,
             final String arg1,
@@ -707,18 +720,23 @@ public class Processor {
         {
         }
 
+        @Override
         public final void endDTD() throws SAXException {
         }
 
+        @Override
         public final void startEntity(final String arg0) throws SAXException {
         }
 
+        @Override
         public final void endEntity(final String arg0) throws SAXException {
         }
 
+        @Override
         public final void startCDATA() throws SAXException {
         }
 
+        @Override
         public final void endCDATA() throws SAXException {
         }
 
@@ -843,6 +861,7 @@ public class Processor {
             this.subdocumentHandlerFactory = subdocumentHandlerFactory;
         }
 
+        @Override
         public final void startElement(
             final String namespaceURI,
             final String localName,
@@ -867,6 +886,7 @@ public class Processor {
             }
         }
 
+        @Override
         public final void endElement(
             final String namespaceURI,
             final String localName,
@@ -883,12 +903,14 @@ public class Processor {
             }
         }
 
+        @Override
         public final void startDocument() throws SAXException {
             if (rootHandler != null) {
                 rootHandler.startDocument();
             }
         }
 
+        @Override
         public final void endDocument() throws SAXException {
             if (rootHandler != null) {
                 rootHandler.endDocument();
@@ -896,6 +918,7 @@ public class Processor {
             }
         }
 
+        @Override
         public final void characters(
             final char[] buff,
             final int offset,
@@ -955,6 +978,7 @@ public class Processor {
             this.isXml = isXml;
         }
 
+        @Override
         public final void startElement(
             final String namespaceURI,
             final String localName,
@@ -988,6 +1012,7 @@ public class Processor {
             }
         }
 
+        @Override
         public final void endElement(
             final String namespaceURI,
             final String localName,
@@ -1007,12 +1032,15 @@ public class Processor {
             }
         }
 
+        @Override
         public final void startDocument() throws SAXException {
         }
 
+        @Override
         public final void endDocument() throws SAXException {
         }
 
+        @Override
         public final void characters(
             final char[] buff,
             final int offset,
@@ -1040,10 +1068,12 @@ public class Processor {
             this.os = os;
         }
 
+        @Override
         public OutputStream openEntry(final String name) throws IOException {
             return os;
         }
 
+        @Override
         public void closeEntry() throws IOException {
             os.flush();
         }
@@ -1057,12 +1087,14 @@ public class Processor {
             this.zos = zos;
         }
 
+        @Override
         public OutputStream openEntry(final String name) throws IOException {
             ZipEntry entry = new ZipEntry(name);
             zos.putNextEntry(entry);
             return zos;
         }
 
+        @Override
         public void closeEntry() throws IOException {
             zos.flush();
             zos.closeEntry();

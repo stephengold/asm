@@ -82,6 +82,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
         }
     }
 
+    @Override
     public void visitSource(final String source, final String debug) {
         AttributesImpl att = new AttributesImpl();
         if (source != null) {
@@ -94,6 +95,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
         addElement("source", att);
     }
 
+    @Override
     public void visitOuterClass(
         final String owner,
         final String name,
@@ -111,6 +113,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
         addElement("outerclass", att);
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String desc,
         final boolean visible)
@@ -122,6 +125,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
                 desc);
     }
 
+    @Override
     public void visit(
         final int version,
         final int access,
@@ -171,6 +175,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
         addEnd("interfaces");
     }
 
+    @Override
     public FieldVisitor visitField(
         final int access,
         final String name,
@@ -199,6 +204,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
         return new SAXFieldAdapter(getContentHandler(), att);
     }
 
+    @Override
     public MethodVisitor visitMethod(
         final int access,
         final String name,
@@ -231,6 +237,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
         return new SAXCodeAdapter(getContentHandler(), access);
     }
 
+    @Override
     public final void visitInnerClass(
         final String name,
         final String outerName,
@@ -254,6 +261,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
         addElement("innerclass", att);
     }
 
+    @Override
     public final void visitEnd() {
         addEnd("class");
         if (!singleDocument) {

@@ -313,6 +313,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         this.labels = new HashMap();
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String desc,
         final boolean visible)
@@ -322,11 +323,13 @@ public class CheckMethodAdapter extends MethodAdapter {
         return new CheckAnnotationAdapter(mv.visitAnnotation(desc, visible));
     }
 
+    @Override
     public AnnotationVisitor visitAnnotationDefault() {
         checkEndMethod();
         return new CheckAnnotationAdapter(mv.visitAnnotationDefault(), false);
     }
 
+    @Override
     public AnnotationVisitor visitParameterAnnotation(
         final int parameter,
         final String desc,
@@ -339,6 +342,7 @@ public class CheckMethodAdapter extends MethodAdapter {
                 visible));
     }
 
+    @Override
     public void visitAttribute(final Attribute attr) {
         checkEndMethod();
         if (attr == null) {
@@ -347,11 +351,13 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitAttribute(attr);
     }
 
+    @Override
     public void visitCode() {
         startCode = true;
         mv.visitCode();
     }
 
+    @Override
     public void visitFrame(
         final int type,
         final int nLocal,
@@ -415,6 +421,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitFrame(type, nLocal, local, nStack, stack);
     }
 
+    @Override
     public void visitInsn(final int opcode) {
         checkStartCode();
         checkEndCode();
@@ -422,6 +429,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitInsn(opcode);
     }
 
+    @Override
     public void visitIntInsn(final int opcode, final int operand) {
         checkStartCode();
         checkEndCode();
@@ -443,6 +451,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitIntInsn(opcode, operand);
     }
 
+    @Override
     public void visitVarInsn(final int opcode, final int var) {
         checkStartCode();
         checkEndCode();
@@ -451,6 +460,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitVarInsn(opcode, var);
     }
 
+    @Override
     public void visitTypeInsn(final int opcode, final String type) {
         checkStartCode();
         checkEndCode();
@@ -463,6 +473,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitTypeInsn(opcode, type);
     }
 
+    @Override
     public void visitFieldInsn(
         final int opcode,
         final String owner,
@@ -478,6 +489,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitFieldInsn(opcode, owner, name, desc);
     }
 
+    @Override
     public void visitMethodInsn(
         final int opcode,
         final String owner,
@@ -493,6 +505,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitMethodInsn(opcode, owner, name, desc);
     }
 
+    @Override
     public void visitJumpInsn(final int opcode, final Label label) {
         checkStartCode();
         checkEndCode();
@@ -501,6 +514,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitJumpInsn(opcode, label);
     }
 
+    @Override
     public void visitLabel(final Label label) {
         checkStartCode();
         checkEndCode();
@@ -512,6 +526,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitLabel(label);
     }
 
+    @Override
     public void visitLdcInsn(final Object cst) {
         checkStartCode();
         checkEndCode();
@@ -521,6 +536,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitLdcInsn(cst);
     }
 
+    @Override
     public void visitIincInsn(final int var, final int increment) {
         checkStartCode();
         checkEndCode();
@@ -529,6 +545,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitIincInsn(var, increment);
     }
 
+    @Override
     public void visitTableSwitchInsn(
         final int min,
         final int max,
@@ -551,6 +568,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitTableSwitchInsn(min, max, dflt, labels);
     }
 
+    @Override
     public void visitLookupSwitchInsn(
         final Label dflt,
         final int[] keys,
@@ -568,6 +586,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitLookupSwitchInsn(dflt, keys, labels);
     }
 
+    @Override
     public void visitMultiANewArrayInsn(final String desc, final int dims) {
         checkStartCode();
         checkEndCode();
@@ -587,6 +606,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitMultiANewArrayInsn(desc, dims);
     }
 
+    @Override
     public void visitTryCatchBlock(
         final Label start,
         final Label end,
@@ -601,6 +621,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitTryCatchBlock(start, end, handler, type);
     }
 
+    @Override
     public void visitLocalVariable(
         final String name,
         final String desc,
@@ -624,6 +645,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitLocalVariable(name, desc, signature, start, end, index);
     }
 
+    @Override
     public void visitLineNumber(final int line, final Label start) {
         checkStartCode();
         checkEndCode();
@@ -632,6 +654,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitLineNumber(line, start);
     }
 
+    @Override
     public void visitMaxs(final int maxStack, final int maxLocals) {
         checkStartCode();
         checkEndCode();
@@ -641,6 +664,7 @@ public class CheckMethodAdapter extends MethodAdapter {
         mv.visitMaxs(maxStack, maxLocals);
     }
 
+    @Override
     public void visitEnd() {
         checkEndMethod();
         endMethod = true;

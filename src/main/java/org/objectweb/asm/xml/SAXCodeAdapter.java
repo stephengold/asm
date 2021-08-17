@@ -78,9 +78,11 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         }
     }
 
+    @Override
     public final void visitCode() {
     }
 
+    @Override
     public void visitFrame(
         final int type,
         final int nLocal,
@@ -156,28 +158,33 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         }
     }
 
+    @Override
     public final void visitInsn(final int opcode) {
         addElement(AbstractVisitor.OPCODES[opcode], new AttributesImpl());
     }
 
+    @Override
     public final void visitIntInsn(final int opcode, final int operand) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("", "value", "value", "", Integer.toString(operand));
         addElement(AbstractVisitor.OPCODES[opcode], attrs);
     }
 
+    @Override
     public final void visitVarInsn(final int opcode, final int var) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("", "var", "var", "", Integer.toString(var));
         addElement(AbstractVisitor.OPCODES[opcode], attrs);
     }
 
+    @Override
     public final void visitTypeInsn(final int opcode, final String type) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("", "desc", "desc", "", type);
         addElement(AbstractVisitor.OPCODES[opcode], attrs);
     }
 
+    @Override
     public final void visitFieldInsn(
         final int opcode,
         final String owner,
@@ -191,6 +198,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement(AbstractVisitor.OPCODES[opcode], attrs);
     }
 
+    @Override
     public final void visitMethodInsn(
         final int opcode,
         final String owner,
@@ -204,18 +212,21 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement(AbstractVisitor.OPCODES[opcode], attrs);
     }
 
+    @Override
     public final void visitJumpInsn(final int opcode, final Label label) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("", "label", "label", "", getLabel(label));
         addElement(AbstractVisitor.OPCODES[opcode], attrs);
     }
 
+    @Override
     public final void visitLabel(final Label label) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("", "name", "name", "", getLabel(label));
         addElement("Label", attrs);
     }
 
+    @Override
     public final void visitLdcInsn(final Object cst) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("",
@@ -231,6 +242,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement(AbstractVisitor.OPCODES[Opcodes.LDC], attrs);
     }
 
+    @Override
     public final void visitIincInsn(final int var, final int increment) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("", "var", "var", "", Integer.toString(var));
@@ -238,6 +250,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement(AbstractVisitor.OPCODES[Opcodes.IINC], attrs);
     }
 
+    @Override
     public final void visitTableSwitchInsn(
         final int min,
         final int max,
@@ -258,6 +271,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addEnd(o);
     }
 
+    @Override
     public final void visitLookupSwitchInsn(
         final Label dflt,
         final int[] keys,
@@ -276,6 +290,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addEnd(o);
     }
 
+    @Override
     public final void visitMultiANewArrayInsn(final String desc, final int dims)
     {
         AttributesImpl attrs = new AttributesImpl();
@@ -284,6 +299,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement(AbstractVisitor.OPCODES[Opcodes.MULTIANEWARRAY], attrs);
     }
 
+    @Override
     public final void visitTryCatchBlock(
         final Label start,
         final Label end,
@@ -300,6 +316,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement("TryCatch", attrs);
     }
 
+    @Override
     public final void visitMaxs(final int maxStack, final int maxLocals) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("",
@@ -317,6 +334,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addEnd("code");
     }
 
+    @Override
     public void visitLocalVariable(
         final String name,
         final String desc,
@@ -341,6 +359,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement("LocalVar", attrs);
     }
 
+    @Override
     public final void visitLineNumber(final int line, final Label start) {
         AttributesImpl attrs = new AttributesImpl();
         attrs.addAttribute("", "line", "line", "", Integer.toString(line));
@@ -348,6 +367,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
         addElement("LineNumber", attrs);
     }
 
+    @Override
     public AnnotationVisitor visitAnnotationDefault() {
         return new SAXAnnotationAdapter(getContentHandler(),
                 "annotationDefault",
@@ -356,6 +376,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
                 null);
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String desc,
         final boolean visible)
@@ -367,6 +388,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
                 desc);
     }
 
+    @Override
     public AnnotationVisitor visitParameterAnnotation(
         final int parameter,
         final String desc,
@@ -379,6 +401,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
                 desc);
     }
 
+    @Override
     public void visitEnd() {
         addEnd("method");
     }

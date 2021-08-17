@@ -112,6 +112,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
 
     // class and method signatures
 
+    @Override
     public void visitFormalTypeParameter(final String name) {
         if (type == TYPE_SIGNATURE
                 || (state != EMPTY && state != FORMAL && state != BOUND))
@@ -125,6 +126,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         }
     }
 
+    @Override
     public SignatureVisitor visitClassBound() {
         if (state != FORMAL) {
             throw new IllegalStateException();
@@ -134,6 +136,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         return new CheckSignatureAdapter(TYPE_SIGNATURE, v);
     }
 
+    @Override
     public SignatureVisitor visitInterfaceBound() {
         if (state != FORMAL && state != BOUND) {
             throw new IllegalArgumentException();
@@ -144,6 +147,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
 
     // class signatures
 
+    @Override
     public SignatureVisitor visitSuperclass() {
         if (type != CLASS_SIGNATURE || (state & (EMPTY | FORMAL | BOUND)) == 0)
         {
@@ -154,6 +158,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         return new CheckSignatureAdapter(TYPE_SIGNATURE, v);
     }
 
+    @Override
     public SignatureVisitor visitInterface() {
         if (state != SUPER) {
             throw new IllegalStateException();
@@ -164,6 +169,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
 
     // method signatures
 
+    @Override
     public SignatureVisitor visitParameterType() {
         if (type != METHOD_SIGNATURE
                 || (state & (EMPTY | FORMAL | BOUND | PARAM)) == 0)
@@ -175,6 +181,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         return new CheckSignatureAdapter(TYPE_SIGNATURE, v);
     }
 
+    @Override
     public SignatureVisitor visitReturnType() {
         if (type != METHOD_SIGNATURE
                 || (state & (EMPTY | FORMAL | BOUND | PARAM)) == 0)
@@ -188,6 +195,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         return cv;
     }
 
+    @Override
     public SignatureVisitor visitExceptionType() {
         if (state != RETURN) {
             throw new IllegalStateException();
@@ -198,6 +206,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
 
     // type signatures
 
+    @Override
     public void visitBaseType(final char descriptor) {
         if (type != TYPE_SIGNATURE || state != EMPTY) {
             throw new IllegalStateException();
@@ -217,6 +226,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         }
     }
 
+    @Override
     public void visitTypeVariable(final String name) {
         if (type != TYPE_SIGNATURE || state != EMPTY) {
             throw new IllegalStateException();
@@ -228,6 +238,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         }
     }
 
+    @Override
     public SignatureVisitor visitArrayType() {
         if (type != TYPE_SIGNATURE || state != EMPTY) {
             throw new IllegalStateException();
@@ -237,6 +248,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         return new CheckSignatureAdapter(TYPE_SIGNATURE, v);
     }
 
+    @Override
     public void visitClassType(final String name) {
         if (type != TYPE_SIGNATURE || state != EMPTY) {
             throw new IllegalStateException();
@@ -248,6 +260,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         }
     }
 
+    @Override
     public void visitInnerClassType(final String name) {
         if (state != CLASS_TYPE) {
             throw new IllegalStateException();
@@ -258,6 +271,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         }
     }
 
+    @Override
     public void visitTypeArgument() {
         if (state != CLASS_TYPE) {
             throw new IllegalStateException();
@@ -267,6 +281,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         }
     }
 
+    @Override
     public SignatureVisitor visitTypeArgument(final char wildcard) {
         if (state != CLASS_TYPE) {
             throw new IllegalStateException();
@@ -278,6 +293,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
         return new CheckSignatureAdapter(TYPE_SIGNATURE, v);
     }
 
+    @Override
     public void visitEnd() {
         if (state != CLASS_TYPE) {
             throw new IllegalStateException();

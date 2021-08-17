@@ -206,6 +206,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
     // Implementation of the ClassVisitor interface
     // ------------------------------------------------------------------------
 
+    @Override
     public void visit(
         final int version,
         final int access,
@@ -281,6 +282,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
         text.add(buf.toString());
     }
 
+    @Override
     public void visitSource(final String file, final String debug) {
         buf.setLength(0);
         buf.append("cw.visitSource(");
@@ -291,6 +293,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
         text.add(buf.toString());
     }
 
+    @Override
     public void visitOuterClass(
         final String owner,
         final String name,
@@ -307,6 +310,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
         text.add(buf.toString());
     }
 
+    @Override
     public void visitInnerClass(
         final String name,
         final String outerName,
@@ -326,6 +330,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
         text.add(buf.toString());
     }
 
+    @Override
     public FieldVisitor visitField(
         final int access,
         final String name,
@@ -353,6 +358,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
         return aav;
     }
 
+    @Override
     public MethodVisitor visitMethod(
         final int access,
         final String name,
@@ -393,6 +399,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
         return new ASMifierMethodVisitor();
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String desc,
         final boolean visible)
@@ -411,6 +418,7 @@ public class ASMifierClassVisitor extends ASMifierAbstractVisitor implements
         return av;
     }
 
+    @Override
     public void visitEnd() {
         text.add("cw.visitEnd();\n\n");
         text.add("return cw.toByteArray();\n");

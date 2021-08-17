@@ -46,6 +46,7 @@ public class CheckFieldAdapter implements FieldVisitor {
         this.fv = fv;
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String desc,
         final boolean visible)
@@ -55,6 +56,7 @@ public class CheckFieldAdapter implements FieldVisitor {
         return new CheckAnnotationAdapter(fv.visitAnnotation(desc, visible));
     }
 
+    @Override
     public void visitAttribute(final Attribute attr) {
         checkEnd();
         if (attr == null) {
@@ -63,6 +65,7 @@ public class CheckFieldAdapter implements FieldVisitor {
         fv.visitAttribute(attr);
     }
 
+    @Override
     public void visitEnd() {
         checkEnd();
         end = true;

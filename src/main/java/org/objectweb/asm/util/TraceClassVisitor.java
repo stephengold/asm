@@ -175,6 +175,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
     // Implementation of the ClassVisitor interface
     // ------------------------------------------------------------------------
 
+    @Override
     public void visit(
         final int version,
         final int access,
@@ -240,6 +241,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         }
     }
 
+    @Override
     public void visitSource(final String file, final String debug) {
         buf.setLength(0);
         if (file != null) {
@@ -263,6 +265,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         }
     }
 
+    @Override
     public void visitOuterClass(
         final String owner,
         final String name,
@@ -284,6 +287,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         }
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String desc,
         final boolean visible)
@@ -297,6 +301,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         return tav;
     }
 
+    @Override
     public void visitAttribute(final Attribute attr) {
         text.add("\n");
         super.visitAttribute(attr);
@@ -306,6 +311,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         }
     }
 
+    @Override
     public void visitInnerClass(
         final String name,
         final String outerName,
@@ -331,6 +337,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         }
     }
 
+    @Override
     public FieldVisitor visitField(
         final int access,
         final String name,
@@ -384,6 +391,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         return tav;
     }
 
+    @Override
     public MethodVisitor visitMethod(
         final int access,
         final String name,
@@ -456,6 +464,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
         return tcv;
     }
 
+    @Override
     public void visitEnd() {
         text.add("}\n");
 

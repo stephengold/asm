@@ -61,6 +61,7 @@ public class TraceAnnotationVisitor extends TraceAbstractVisitor implements
     // Implementation of the AnnotationVisitor interface
     // ------------------------------------------------------------------------
 
+    @Override
     public void visit(final String name, final Object value) {
         buf.setLength(0);
         appendComa(valueNumber++);
@@ -190,6 +191,7 @@ public class TraceAnnotationVisitor extends TraceAbstractVisitor implements
         buf.append(value.getClassName()).append(".class");
     }
 
+    @Override
     public void visitEnum(
         final String name,
         final String desc,
@@ -209,6 +211,7 @@ public class TraceAnnotationVisitor extends TraceAbstractVisitor implements
         }
     }
 
+    @Override
     public AnnotationVisitor visitAnnotation(
         final String name,
         final String desc)
@@ -231,6 +234,7 @@ public class TraceAnnotationVisitor extends TraceAbstractVisitor implements
         return tav;
     }
 
+    @Override
     public AnnotationVisitor visitArray(final String name) {
         buf.setLength(0);
         appendComa(valueNumber++);
@@ -248,6 +252,7 @@ public class TraceAnnotationVisitor extends TraceAbstractVisitor implements
         return tav;
     }
 
+    @Override
     public void visitEnd() {
         if (av != null) {
             av.visitEnd();
