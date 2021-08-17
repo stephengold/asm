@@ -185,6 +185,7 @@ public class InsnList {
     /**
      * Returns an iterator over the instructions in this list.
      * 
+     * @param index
      * @return an iterator over the instructions in this list.
      */
     public ListIterator iterator(int index) {

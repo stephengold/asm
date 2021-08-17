@@ -121,6 +121,9 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
     /**
      * Detects a JSR instruction and sets a flag to indicate we will need to do
      * inlining.
+     *
+     * @param opcode
+     * @param lbl
      */
     @Override
     public void visitJumpInsn(final int opcode, final Label lbl) {

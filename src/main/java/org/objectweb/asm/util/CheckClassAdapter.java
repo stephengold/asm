@@ -101,7 +101,7 @@ import org.objectweb.asm.tree.analysis.Frame;
  * 00071 LinkedBlockingQueue$Itr <b>.</b> I . . . . . .  : 
  *   ILOAD 1
  * 00072 <b>?</b>                
- *   INVOKESPECIAL java/lang/Integer.<init> (I)V
+ *   INVOKESPECIAL java/lang/Integer.&lt;init&gt; (I)V
  * ...
  * </pre>
  * 

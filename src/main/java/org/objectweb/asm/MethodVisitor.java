@@ -34,9 +34,9 @@ package org.objectweb.asm;
  * called in the following order: [ <tt>visitAnnotationDefault</tt> ] (
  * <tt>visitAnnotation</tt> | <tt>visitParameterAnnotation</tt> |
  * <tt>visitAttribute</tt> )* [ <tt>visitCode</tt> ( <tt>visitFrame</tt> |
- * <tt>visit</tt><i>X</i>Insn</tt> | <tt>visitLabel</tt> | <tt>visitTryCatchBlock</tt> |
+ * <tt>visit<i>X</i>Insn</tt> | <tt>visitLabel</tt> | <tt>visitTryCatchBlock</tt> |
  * <tt>visitLocalVariable</tt> | <tt>visitLineNumber</tt>)* <tt>visitMaxs</tt> ]
- * <tt>visitEnd</tt>. In addition, the <tt>visit</tt><i>X</i>Insn</tt>
+ * <tt>visitEnd</tt>. In addition, the <tt>visit<i>X</i>Insn</tt>
  * and <tt>visitLabel</tt> methods must be called in the sequential order of
  * the bytecode instructions of the visited code, <tt>visitTryCatchBlock</tt>
  * must be called <i>before</i> the labels passed as arguments have been
@@ -125,7 +125,7 @@ public interface MethodVisitor {
      * the same as the locals in the previous frame, except that the last 1-3
      * locals are absent and with the empty stack (<code>nLocals</code> is 1,
      * 2 or 3). </li> <li>{@link Opcodes#F_FULL} representing complete frame
-     * data.</li> </li> </ul>
+     * data.</li> </ul>
      * 
      * @param type the type of this stack map frame. Must be
      *        {@link Opcodes#F_NEW} for expanded frames, or

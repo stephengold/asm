@@ -67,6 +67,7 @@ public final class SAXCodeAdapter extends SAXAdapter implements MethodVisitor {
      * Constructs a new {@link SAXCodeAdapter SAXCodeAdapter} object.
      * 
      * @param h content handler that will be used to send SAX 2.0 events.
+     * @param access
      */
     public SAXCodeAdapter(final ContentHandler h, final int access) {
         super(h);
