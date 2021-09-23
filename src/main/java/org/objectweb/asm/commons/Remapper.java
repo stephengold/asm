@@ -141,7 +141,7 @@ public abstract class Remapper {
      * @param typeSignature true if signature is a FieldTypeSignature, such as
      *        the signature parameter of the ClassVisitor.visitField or
      *        MethodVisitor.visitLocalVariable methods
-     * @return
+     * @return the mapped signature (may be null)
      */
     public String mapSignature(String signature, boolean typeSignature) {
         if (signature == null) {
@@ -170,7 +170,7 @@ public abstract class Remapper {
      * @param owner
      * @param name
      * @param desc
-     * @return
+     * @return the mapped method name
      */
     public String mapMethodName(String owner, String name, String desc) {
         return name;
@@ -182,7 +182,7 @@ public abstract class Remapper {
      * @param owner
      * @param name
      * @param desc
-     * @return
+     * @return the mapped field name
      */
     public String mapFieldName(String owner, String name, String desc) {
         return name;
@@ -192,7 +192,7 @@ public abstract class Remapper {
      * Map type name to the new name. Subclasses can override.
      *
      * @param typeName
-     * @return
+     * @return the mapped type name
      */
     public String map(String typeName) {
         return typeName;
