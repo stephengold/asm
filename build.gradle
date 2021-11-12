@@ -6,6 +6,7 @@ plugins {
     id 'signing'
 }
 
+description = 'A very small and fast Java bytecode manipulation framework'
 ext {
     group = 'com.github.stephengold'
     artifact = 'asm-all'
@@ -13,8 +14,6 @@ ext {
     baseName = "${artifact}-${version}"
     websiteUrl = 'https://github.com/stephengold/asm'
 }
-
-description = 'A very small and fast Java bytecode manipulation framework'
 
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
@@ -47,7 +46,6 @@ task('release') {
 jar {
     archiveBaseName = project.ext.baseName
 }
-
 task javadocJar(type: Jar) {
     archiveBaseName = project.ext.baseName
     archiveClassifier = 'javadoc'
@@ -55,7 +53,6 @@ task javadocJar(type: Jar) {
     description 'Creates a JAR of javadoc.'
     from javadoc.destinationDir
 }
-
 task sourcesJar(type: Jar) {
     archiveBaseName = project.ext.baseName
     archiveClassifier = 'sources'
@@ -130,6 +127,9 @@ publishing {
             version project.ext.version
         }
     }
+    // Staging to OSSRH relies on the existence of 2 properties
+    // (ossrhUsername and ossrhPassword)
+    // which should be stored in ~/.gradle/gradle.properties
     repositories {
         maven {
             credentials {
@@ -147,6 +147,10 @@ publishMavenPublicationToMavenLocal.doLast {
 }
 
 // signing tasks
+
+// Signing relies on the existence of 3 properties
+// (signing.keyId, signing.password, and signing.secretKeyRingFile)
+// which should be stored in ~/.gradle/gradle.properties
 
 signing {
     sign publishing.publications.maven
