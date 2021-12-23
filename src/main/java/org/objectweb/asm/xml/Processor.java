@@ -1,4 +1,4 @@
-/***
+/*
  * ASM XML Adapter
  * Copyright (c) 2004, Eugene Kuleshov
  * All rights reserved.
