@@ -47,9 +47,9 @@ public abstract class AbstractVisitor {
      */
     public static final String[] OPCODES;
     /**
-     * Types for <code>operand</code> parameter of the
+     * Types for {@code operand} parameter of the
      * {@link org.objectweb.asm.MethodVisitor#visitIntInsn} method when
-     * <code>opcode</code> is <code>NEWARRAY</code>.
+     * {@code opcode} is {@code NEWARRAY}.
      */
     public static final String[] TYPES;
 

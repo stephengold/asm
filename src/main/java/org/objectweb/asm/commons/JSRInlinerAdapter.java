@@ -94,8 +94,8 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
     /**
      * Creates a new JSRInliner.
      * 
-     * @param mv the <code>MethodVisitor</code> to send the resulting inlined
-     *        method code to (use <code>null</code> for none).
+     * @param mv the {@code MethodVisitor} to send the resulting inlined
+     *        method code to (use {@code null} for none).
      * @param access the method's access flags (see {@link Opcodes}). This
      *        parameter also indicates if the method is synthetic and/or
      *        deprecated.
@@ -184,12 +184,12 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
 
     /**
      * Performs a depth first search walking the normal byte code path starting
-     * at <code>index</code>, and adding each instruction encountered into
-     * the subroutine <code>sub</code>. After this walk is complete, iterates
+     * at {@code index}, and adding each instruction encountered into
+     * the subroutine {@code sub}. After this walk is complete, iterates
      * over the exception handlers to ensure that we also include those byte
      * codes which are reachable through an exception that may be thrown during
      * the execution of the subroutine. Invoked from
-     * <code>markSubroutines()</code>.
+     * {@code markSubroutines()}.
      * 
      * @param sub the subroutine whose instructions must be computed.
      * @param index an instruction of this subroutine.
@@ -245,8 +245,8 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
 
     /**
      * Performs a simple DFS of the instructions, assigning each to the
-     * subroutine <code>sub</code>. Starts from <code>index</code>.
-     * Invoked only by <code>markSubroutineWalk()</code>.
+     * subroutine {@code sub}. Starts from {@code index}.
+     * Invoked only by {@code markSubroutineWalk()}.
      * 
      * @param sub the subroutine whose instructions must be computed.
      * @param index an instruction of this subroutine.
@@ -364,9 +364,9 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
 
     /**
      * Emits one instantiation of one subroutine, specified by
-     * <code>instant</code>. May add new instantiations that are invoked by
-     * this one to the <code>worklist</code> parameter, and new try/catch
-     * blocks to <code>newTryCatchBlocks</code>.
+     * {@code instant}. May add new instantiations that are invoked by
+     * this one to the {@code worklist} parameter, and new try/catch
+     * blocks to {@code newTryCatchBlocks}.
      * 
      * @param instant the instantiation that must be performed.
      * @param worklist list of the instantiations that remain to be done.
@@ -656,10 +656,10 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
          * instantiation: the owner referes to the Instantiation which will emit
          * the version of this instruction that we will execute.
          * 
-         * Typically, the return value is either <code>this</code> or
-         * <code>null</code>. <code>this</code> indicates that this
+         * Typically, the return value is either {@code this} or
+         * {@code null}. {@code this} indicates that this
          * instantiation will generate the version of this instruction that we
-         * will execute, and <code>null</code> indicates that this
+         * will execute, and {@code null} indicates that this
          * instantiation never executes the given instruction.
          * 
          * Sometimes, however, an instruction can belong to multiple
@@ -690,7 +690,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
         }
 
         /**
-         * Looks up the label <code>l</code> in the <code>gotoTable</code>,
+         * Looks up the label {@code l} in the {@code gotoTable},
          * thus translating it from a Label in the original code, to a Label in
          * the inlined code that is appropriate for use by an instruction that
          * branched to the original label.
@@ -707,7 +707,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
         }
 
         /**
-         * Looks up the label <code>l</code> in the <code>rangeTable</code>,
+         * Looks up the label {@code l} in the {@code rangeTable},
          * thus translating it from a Label in the original code, to a Label in
          * the inlined code that is appropriate for use by an try/catch or
          * variable use annotation.

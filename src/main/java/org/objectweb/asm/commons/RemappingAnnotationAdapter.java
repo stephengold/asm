@@ -33,7 +33,7 @@ package org.objectweb.asm.commons;
 import org.objectweb.asm.AnnotationVisitor;
 
 /**
- * An <code>AnnotationVisitor</code> adapter for type remapping.
+ * An {@code AnnotationVisitor} adapter for type remapping.
  * 
  * @author Eugene Kuleshov
  */

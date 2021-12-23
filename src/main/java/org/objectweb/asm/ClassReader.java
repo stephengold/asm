@@ -69,7 +69,7 @@ public class ClassReader {
     static final boolean RESIZE = true;
     
     /**
-     * Flag to skip method code. If this class is set <code>CODE</code>
+     * Flag to skip method code. If this class is set, {@code CODE}
      * attribute won't be visited. This can be used, for example, to retrieve
      * annotations for methods and method parameters.
      */

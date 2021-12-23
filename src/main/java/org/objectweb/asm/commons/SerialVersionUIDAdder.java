@@ -309,7 +309,7 @@ public class SerialVersionUIDAdder extends ClassAdapter {
     /**
      * Returns the value of SVUID if the class doesn't have one already. Please
      * note that 0 is returned if the class already has SVUID, thus use
-     * <code>isHasSVUID</code> to determine if the class already had an SVUID.
+     * {@code isHasSVUID} to determine if the class already had an SVUID.
      * 
      * @return Returns the serial version UID
      * @throws java.io.IOException
@@ -439,8 +439,8 @@ public class SerialVersionUIDAdder extends ClassAdapter {
      * Sorts the items in the collection and writes it to the data output stream
      * 
      * @param itemCollection collection of items
-     * @param dos a <code>DataOutputStream</code> value
-     * @param dotted a <code>boolean</code> value
+     * @param dos a {@code DataOutputStream} value
+     * @param dotted a {@code boolean} value
      * @exception IOException if an error occurs
      */
     private static void writeItems(

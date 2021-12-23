@@ -57,7 +57,7 @@ import org.objectweb.asm.Type;
 public class AnalyzerAdapter extends MethodAdapter {
 
     /**
-     * <code>List</code> of the local variable slots for current execution
+     * {@code List} of the local variable slots for current execution
      * frame. Primitive types are represented by {@link Opcodes#TOP},
      * {@link Opcodes#INTEGER}, {@link Opcodes#FLOAT}, {@link Opcodes#LONG},
      * {@link Opcodes#DOUBLE},{@link Opcodes#NULL} or
@@ -71,7 +71,7 @@ public class AnalyzerAdapter extends MethodAdapter {
     public List locals;
 
     /**
-     * <code>List</code> of the operand stack slots for current execution
+     * {@code List} of the operand stack slots for current execution
      * frame. Primitive types are represented by {@link Opcodes#TOP},
      * {@link Opcodes#INTEGER}, {@link Opcodes#FLOAT}, {@link Opcodes#LONG},
      * {@link Opcodes#DOUBLE},{@link Opcodes#NULL} or

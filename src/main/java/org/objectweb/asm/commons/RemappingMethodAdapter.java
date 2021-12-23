@@ -35,7 +35,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 
 /**
- * A <code>MethodAdapter</code> for type mapping.
+ * A {@code MethodAdapter} for type mapping.
  * 
  * @author Eugene Kuleshov
  */

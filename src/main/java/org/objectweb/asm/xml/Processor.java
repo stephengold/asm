@@ -621,10 +621,10 @@ public class Processor {
         private int ident = 0;
 
         /**
-         * Creates <code>SAXWriter</code>.
+         * Creates {@code SAXWriter}.
          * 
          * @param w writer
-         * @param optimizeEmptyElements if set to <code>true</code>, short
+         * @param optimizeEmptyElements if set to {@code true}, short
          *        XML syntax will be used for empty elements
          */
         private SAXWriter(final Writer w, final boolean optimizeEmptyElements) {

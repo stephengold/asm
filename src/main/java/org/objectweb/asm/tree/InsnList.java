@@ -551,7 +551,7 @@ public class InsnList {
     /**
      * Reset all labels in the instruction list. This method should be called
      * before reusing same instructions list between several
-     * <code>ClassWriter</code>s.
+     * {@code ClassWriter}s.
      */
     public void resetLabels() {
         AbstractInsnNode insn = first;

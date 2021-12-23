@@ -443,7 +443,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
 
     /**
      * Return the top object on the stack without removing it. If there are no
-     * objects on the stack, return <code>null</code>.
+     * objects on the stack, return {@code null}.
      *
      * @return the top object on the stack without removing it.
      */
@@ -454,7 +454,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
 
     /**
      * Pop the top object off of the stack, and return it. If there are no
-     * objects on the stack, return <code>null</code>.
+     * objects on the stack, return {@code null}.
      *
      * @return the top object off of the stack.
      */

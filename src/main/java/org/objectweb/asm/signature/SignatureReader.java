@@ -59,9 +59,9 @@ public class SignatureReader {
      * constructor (see {@link #SignatureReader(String) SignatureReader}). This
      * method is intended to be called on a {@link SignatureReader} that was
      * created using a <i>ClassSignature</i> (such as the
-     * <code>signature</code> parameter of the
+     * {@code signature} parameter of the
      * {@link org.objectweb.asm.ClassVisitor#visit ClassVisitor.visit} method)
-     * or a <i>MethodTypeSignature</i> (such as the <code>signature</code>
+     * or a <i>MethodTypeSignature</i> (such as the {@code signature}
      * parameter of the
      * {@link org.objectweb.asm.ClassVisitor#visitMethod ClassVisitor.visitMethod}
      * method).
@@ -117,7 +117,7 @@ public class SignatureReader {
      * constructor (see {@link #SignatureReader(String) SignatureReader}). This
      * method is intended to be called on a {@link SignatureReader} that was
      * created using a <i>FieldTypeSignature</i>, such as the
-     * <code>signature</code> parameter of the
+     * {@code signature} parameter of the
      * {@link org.objectweb.asm.ClassVisitor#visitField 
      * ClassVisitor.visitField} or {@link 
      * org.objectweb.asm.MethodVisitor#visitLocalVariable

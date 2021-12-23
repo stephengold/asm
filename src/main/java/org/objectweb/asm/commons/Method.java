@@ -109,7 +109,7 @@ public class Method {
      *        be fully qualified.
      * @return a {@link Method} corresponding to the given Java method
      *         declaration.
-     * @throws IllegalArgumentException if <code>method</code> could not get
+     * @throws IllegalArgumentException if {@code method} could not get
      *         parsed.
      */
     public static Method getMethod(final String method)
@@ -135,7 +135,7 @@ public class Method {
      *        "java.lang.Object" otherwise.
      * @return a {@link Method} corresponding to the given Java method
      *         declaration.
-     * @throws IllegalArgumentException if <code>method</code> could not get
+     * @throws IllegalArgumentException if {@code method} could not get
      *         parsed.
      */
     public static Method getMethod(

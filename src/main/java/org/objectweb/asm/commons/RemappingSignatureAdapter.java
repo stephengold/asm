@@ -33,7 +33,7 @@ package org.objectweb.asm.commons;
 import org.objectweb.asm.signature.SignatureVisitor;
 
 /**
- * A <code>SignatureVisitor</code> adapter for type mapping.
+ * A {@code SignatureVisitor} adapter for type mapping.
  * 
  * @author Eugene Kuleshov
  */

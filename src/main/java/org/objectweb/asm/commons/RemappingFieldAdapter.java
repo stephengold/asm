@@ -35,7 +35,7 @@ import org.objectweb.asm.Attribute;
 import org.objectweb.asm.FieldVisitor;
 
 /**
- * A <code>FieldVisitor</code> adapter for type remapping.
+ * A {@code FieldVisitor} adapter for type remapping.
  * 
  * @author Eugene Kuleshov
  */
