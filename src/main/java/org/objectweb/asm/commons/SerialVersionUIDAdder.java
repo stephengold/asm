@@ -173,12 +173,12 @@ public class SerialVersionUIDAdder extends ClassAdapter {
     }
 
     // ------------------------------------------------------------------------
-    // Overriden methods
+    // Overridden methods
     // ------------------------------------------------------------------------
 
     /*
-     * Visit class header and get class name, access , and intefraces
-     * informatoin (step 1,2, and 3) for SVUID computation.
+     * Visit class header and get class name, access, and interfaces
+     * information (step 1, 2, and 3) for SVUID computation.
      */
     @Override
     public void visit(
@@ -202,7 +202,7 @@ public class SerialVersionUIDAdder extends ClassAdapter {
 
     /*
      * Visit the methods and get constructor and method information (step 5 and
-     * 7). Also determince if there is a class initializer (step 6).
+     * 7). Also determines if there is a class initializer (step 6).
      */
     @Override
     public MethodVisitor visitMethod(
@@ -243,7 +243,7 @@ public class SerialVersionUIDAdder extends ClassAdapter {
     }
 
     /*
-     * Gets class field information for step 4 of the alogrithm. Also determines
+     * Gets class field information for step 4 of the algorithm. Also determines
      * if the class already has a SVUID.
      */
     @Override
@@ -352,7 +352,7 @@ public class SerialVersionUIDAdder extends ClassAdapter {
              * field written as a 32-bit integer. 3. The descriptor of the field
              * in UTF encoding
              * 
-             * Note that field signatutes are not dot separated. Method and
+             * Note that field signatures are not dot separated. Method and
              * constructor signatures are dot separated. Go figure...
              */
             writeItems(svuidFields, dos, false);

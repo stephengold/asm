@@ -310,7 +310,7 @@ public class Processor {
     // templates,
     // os,
     // computeMax);
-    // } else { // factory used to transformand then write XML
+    // } else { // factory used to transform and then write XML
     // factory = new TransformerHandlerFactory(saxtf,
     // templates,
     // os,

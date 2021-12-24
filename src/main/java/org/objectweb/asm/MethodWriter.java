@@ -892,7 +892,7 @@ class MethodWriter implements MethodVisitor {
                     nextInsn = new Label();
                     /*
                      * note that, by construction in this method, a JSR block
-                     * has at least two successors in the control flow graph:
+                     * has at least two successors in the control-flow graph:
                      * the first one leads the next instruction after the JSR,
                      * while the second one leads to the JSR target.
                      */
@@ -1227,7 +1227,7 @@ class MethodWriter implements MethodVisitor {
     @Override
     public void visitMaxs(final int maxStack, final int maxLocals) {
         if (ClassReader.FRAMES && compute == FRAMES) {
-            // completes the control flow graph with exception handler blocks
+            // completes the control-flow graph with exception-handler blocks
             Handler handler = firstHandler;
             while (handler != null) {
                 Label l = handler.start.getFirst();
@@ -1275,11 +1275,11 @@ class MethodWriter implements MethodVisitor {
                 changed = changed.next;
                 l.next = null;
                 f = l.frame;
-                // a reacheable jump target must be stored in the stack map
+                // a reachable jump target must be stored in the stack map
                 if ((l.status & Label.TARGET) != 0) {
                     l.status |= Label.STORE;
                 }
-                // all visited labels are reacheable, by definition
+                // all visited labels are reachable, by definition
                 l.status |= Label.REACHABLE;
                 // updates the (absolute) maximum stack size
                 int blockMax = f.inputStack.length + l.outputStackMax;
@@ -1314,7 +1314,7 @@ class MethodWriter implements MethodVisitor {
                     Label k = l.successor;
                     int start = l.position;
                     int end = (k == null ? code.length : k.position) - 1;
-                    // if non empty basic block
+                    // if non-empty basic block
                     if (end >= start) {
                         // replaces instructions with NOP ... NOP ATHROW
                         for (int i = start; i < end; ++i) {
@@ -1331,7 +1331,7 @@ class MethodWriter implements MethodVisitor {
                 l = l.successor;
             }
         } else if (compute == MAXS) {
-            // completes the control flow graph with exception handler blocks
+            // completes the control-flow graph with exception-handler blocks
             Handler handler = firstHandler;
             while (handler != null) {
                 Label l = handler.start;
@@ -1361,7 +1361,7 @@ class MethodWriter implements MethodVisitor {
             }
 
             if (subroutines > 0) {
-                // completes the control flow graph with the RET successors
+                // completes the control-flow graph with the RET successors
                 /*
                  * first step: finds the subroutines. This step determines, for
                  * each basic block, to which subroutine(s) it belongs.
@@ -1403,13 +1403,13 @@ class MethodWriter implements MethodVisitor {
             }
 
             /*
-             * control flow analysis algorithm: while the block stack is not
+             * control-flow analysis algorithm: while the block stack is not
              * empty, pop a block from this stack, update the max stack size,
-             * compute the true (non relative) begin stack size of the
+             * compute the true (non-relative) begin stack size of the
              * successors of this block, and push these successors onto the
              * stack (unless they have already been pushed onto the stack).
              * Note: by hypothesis, the {@link Label#inputStackTop} of the
-             * blocks in the block stack are the true (non relative) beginning
+             * blocks in the block stack are the true (non-relative) beginning
              * stack sizes of these blocks.
              */
             int max = 0;
@@ -1418,7 +1418,7 @@ class MethodWriter implements MethodVisitor {
                 // pops a block from the stack
                 Label l = stack;
                 stack = stack.next;
-                // computes the true (non relative) max stack size of this block
+                // computes the true (non-relative) max stack size of this block
                 int start = l.inputStackTop;
                 int blockMax = start + l.outputStackMax;
                 // updates the global max stack size
@@ -1458,7 +1458,7 @@ class MethodWriter implements MethodVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Utility methods: control flow analysis algorithm
+    // Utility methods: control-flow analysis algorithm
     // ------------------------------------------------------------------------
 
     /**
@@ -2094,8 +2094,8 @@ class MethodWriter implements MethodVisitor {
         int u, v, label; // indexes in b
         int i, j; // loop indexes
         /*
-         * 1st step: As explained above, resizing an instruction may require to
-         * resize another one, which may require to resize yet another one, and
+         * 1st step: As explained above, resizing an instruction may require
+         * resizing another one, which may require resizing yet another one, and
          * so on. The first step of the algorithm consists in finding all the
          * instructions that need to be resized, without modifying the code.
          * This is done by the following "fix point" algorithm:
@@ -2114,7 +2114,7 @@ class MethodWriter implements MethodVisitor {
          * of TABLESWITCH and LOOKUPSWITCH instructions depends on their
          * position in the bytecode (because of padding). In order to ensure the
          * convergence of the algorithm, the number of bytes to be added or
-         * removed from these instructions is over estimated during the previous
+         * removed from these instructions is overestimated during the previous
          * loop, and computed exactly only after the loop is finished (this
          * requires another pass to parse the bytecode of the method).
          */
@@ -2441,7 +2441,7 @@ class MethodWriter implements MethodVisitor {
             } else {
                 /*
                  * Resizing an existing stack map frame table is really hard.
-                 * Not only the table must be parsed to update the offets, but
+                 * Not only the table must be parsed to update the offsets, but
                  * new frames may be needed for jump instructions that were
                  * inserted by this method. And updating the offsets or
                  * inserting frames can change the format of the following

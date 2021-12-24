@@ -148,7 +148,7 @@ public class Analyzer implements Opcodes {
             }
         }
 
-        // initializes the data structures for the control flow analysis
+        // initializes the data structures for the control-flow analysis
         Frame current = newFrame(m.maxLocals, m.maxStack);
         Frame handler = newFrame(m.maxLocals, m.maxStack);
         Type[] args = Type.getArgumentTypes(m.desc);
@@ -168,7 +168,7 @@ public class Analyzer implements Opcodes {
         }
         merge(0, current, null);
 
-        // control flow analysis
+        // control-flow analysis
         while (top > 0) {
             int insn = queue[--top];
             Frame f = frames[insn];
@@ -344,7 +344,7 @@ public class Analyzer implements Opcodes {
                 }
             }
 
-            // if insn does not falls through to the next instruction, return.
+            // if insn does not fall through to the next instruction, return.
             switch (node.getOpcode()) {
                 case GOTO:
                 case RET:
