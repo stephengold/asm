@@ -116,7 +116,7 @@ public class Frame {
      */
     public Value getLocal(final int i) throws IndexOutOfBoundsException {
         if (i >= locals) {
-            throw new IndexOutOfBoundsException("Trying to access an inexistant local variable");
+            throw new IndexOutOfBoundsException("Trying to access a nonexistent local variable");
         }
         return values[i];
     }
@@ -132,7 +132,7 @@ public class Frame {
             throws IndexOutOfBoundsException
     {
         if (i >= locals) {
-            throw new IndexOutOfBoundsException("Trying to access an inexistant local variable");
+            throw new IndexOutOfBoundsException("Trying to access a nonexistent local variable");
         }
         values[i] = value;
     }
