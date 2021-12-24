@@ -56,7 +56,7 @@ final class AnnotationWriter implements AnnotationVisitor {
 
     /**
      * The annotation values in bytecode form. This byte vector only contains
-     * the values themselves, i.e. the number of values must be stored as a
+     * the values themselves, i.e. the number of values must be stored as an
      * unsigned short just before these bytes.
      */
     private final ByteVector bv;

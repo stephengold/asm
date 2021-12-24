@@ -40,7 +40,7 @@ public class Label {
     /**
      * Indicates if this label is only used for debug attributes. Such a label
      * is not the start of a basic block, the target of a jump instruction, or
-     * an exception handler. It can be safely ignored in control flow graph
+     * an exception handler. It can be safely ignored in control-flow graph
      * analysis algorithms (for optimization purposes).
      */
     static final int DEBUG = 1;
@@ -136,7 +136,7 @@ public class Label {
     private int referenceCount;
 
     /**
-     * Informations about forward references. Each forward reference is
+     * Information about forward references. Each forward reference is
      * described by two consecutive integers in this array: the first one is the
      * position of the first byte of the bytecode instruction that contains the
      * forward reference, while the second is the position of the first byte of
@@ -219,7 +219,7 @@ public class Label {
     Label successor;
 
     /**
-     * The successors of this node in the control flow graph. These successors
+     * The successors of this node in the control-flow graph. These successors
      * are stored in a linked list of {@link Edge Edge} objects, linked to each
      * other by their {@link Edge#next} field.
      */
@@ -228,7 +228,7 @@ public class Label {
     /**
      * The next basic block in the basic block stack. This stack is used in the
      * main loop of the fix point algorithm used in the second step of the
-     * control flow analysis algorithms.
+     * control-flow analysis algorithms.
      * 
      * @see MethodWriter#visitMaxs
      */
@@ -343,7 +343,7 @@ public class Label {
      * @param owner the code writer that calls this method.
      * @param position the position of this label in the bytecode.
      * @param data the bytecode of the method.
-     * @return <tt>true</tt> if a blank that was left for this label was to
+     * @return <tt>true</tt> if a blank that was left for this label was too
      *         small to store the offset. In such a case the corresponding jump
      *         instruction is replaced with a pseudo instruction (using unused
      *         opcodes) using an unsigned two bytes offset. These pseudo
@@ -464,7 +464,7 @@ public class Label {
     /**
      * Finds the basic blocks that belong to a given subroutine, and marks these
      * blocks as belonging to this subroutine. This recursive method follows the
-     * control flow graph to find all the blocks that are reachable from the
+     * control-flow graph to find all the blocks that are reachable from the
      * current block WITHOUT following any JSR target.
      * 
      * @param JSR a JSR block that jumps to this subroutine. If this JSR is not

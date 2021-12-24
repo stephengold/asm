@@ -63,14 +63,14 @@ public class ClassNode extends MemberNode implements ClassVisitor {
     public String name;
 
     /**
-     * The signature of the class. Mayt be <tt>null</tt>.
+     * The signature of the class. May be <tt>null</tt>.
      */
     public String signature;
 
     /**
-     * The internal of name of the super class (see
+     * The internal of name of the superclass (see
      * {@link org.objectweb.asm.Type#getInternalName() getInternalName}). For
-     * interfaces, the super class is {@link Object}. May be <tt>null</tt>,
+     * interfaces, the superclass is {@link Object}. May be <tt>null</tt>,
      * but only for the {@link Object} class.
      */
     public String superName;
@@ -89,7 +89,7 @@ public class ClassNode extends MemberNode implements ClassVisitor {
     public String sourceFile;
 
     /**
-     * Debug information to compute the correspondance between source and
+     * Debug information to compute the correspondence between source and
      * compiled elements of the class. May be <tt>null</tt>.
      */
     public String sourceDebug;
@@ -113,7 +113,7 @@ public class ClassNode extends MemberNode implements ClassVisitor {
     public String outerMethodDesc;
 
     /**
-     * Informations about the inner classes of this class. This list is a list
+     * Information about the inner classes of this class. This list is a list
      * of {@link InnerClassNode} objects.
      */
     public List innerClasses;

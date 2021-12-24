@@ -70,7 +70,7 @@ public interface Interpreter {
      * 
      * @param insn the bytecode instruction to be interpreted.
      * @return the result of the interpretation of the given instruction.
-     * @throws AnalyzerException if an error occured during the interpretation.
+     * @throws AnalyzerException if an error occurred during the interpretation.
      */
     Value newOperation(AbstractInsnNode insn) throws AnalyzerException;
 
@@ -85,7 +85,7 @@ public interface Interpreter {
      * @param value the value that must be moved by the instruction.
      * @return the result of the interpretation of the given instruction. The
      *         returned value must be <tt>equal</tt> to the given value.
-     * @throws AnalyzerException if an error occured during the interpretation.
+     * @throws AnalyzerException if an error occurred during the interpretation.
      */
     Value copyOperation(AbstractInsnNode insn, Value value)
             throws AnalyzerException;
@@ -103,7 +103,7 @@ public interface Interpreter {
      * @param insn the bytecode instruction to be interpreted.
      * @param value the argument of the instruction to be interpreted.
      * @return the result of the interpretation of the given instruction.
-     * @throws AnalyzerException if an error occured during the interpretation.
+     * @throws AnalyzerException if an error occurred during the interpretation.
      */
     Value unaryOperation(AbstractInsnNode insn, Value value)
             throws AnalyzerException;
@@ -123,7 +123,7 @@ public interface Interpreter {
      * @param value1 the first argument of the instruction to be interpreted.
      * @param value2 the second argument of the instruction to be interpreted.
      * @return the result of the interpretation of the given instruction.
-     * @throws AnalyzerException if an error occured during the interpretation.
+     * @throws AnalyzerException if an error occurred during the interpretation.
      */
     Value binaryOperation(AbstractInsnNode insn, Value value1, Value value2)
             throws AnalyzerException;
@@ -139,7 +139,7 @@ public interface Interpreter {
      * @param value2 the second argument of the instruction to be interpreted.
      * @param value3 the third argument of the instruction to be interpreted.
      * @return the result of the interpretation of the given instruction.
-     * @throws AnalyzerException if an error occured during the interpretation.
+     * @throws AnalyzerException if an error occurred during the interpretation.
      */
     Value ternaryOperation(
         AbstractInsnNode insn,
@@ -157,7 +157,7 @@ public interface Interpreter {
      * @param insn the bytecode instruction to be interpreted.
      * @param values the arguments of the instruction to be interpreted.
      * @return the result of the interpretation of the given instruction.
-     * @throws AnalyzerException if an error occured during the interpretation.
+     * @throws AnalyzerException if an error occurred during the interpretation.
      */
     Value naryOperation(AbstractInsnNode insn, List values)
             throws AnalyzerException;

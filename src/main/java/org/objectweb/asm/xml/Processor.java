@@ -79,7 +79,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
  * 
  * <tr> <td>Caucho</td> <td>com.caucho.xsl.Xsl</td> </tr>
  * 
- * <tr> <td>Xalan interpeter</td> <td>org.apache.xalan.processor.TransformerFactory</td>
+ * <tr> <td>Xalan interpreter</td> <td>org.apache.xalan.processor.TransformerFactory</td>
  * </tr>
  * 
  * <tr> <td>Xalan xsltc</td> <td>org.apache.xalan.xsltc.trax.TransformerFactoryImpl</td>
@@ -605,7 +605,7 @@ public class Processor {
      * from SAX 2.0 events into {@link java.io.Writer Writer}.
      * 
      * <i><blockquote> This implementation does not support namespaces, entity
-     * definitions (uncluding DTD), CDATA and text elements. </blockquote></i>
+     * definitions (including DTD), CDATA and text elements. </blockquote></i>
      */
     private static final class SAXWriter extends DefaultHandler implements
             LexicalHandler

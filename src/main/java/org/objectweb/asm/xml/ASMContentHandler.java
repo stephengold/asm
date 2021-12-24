@@ -51,7 +51,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * A {@link org.xml.sax.ContentHandler ContentHandler} that transforms XML
- * document into Java class file. This class can be feeded by any kind of SAX
+ * document into Java class file. This class can be fed by any kind of SAX
  * 2.0 event producers, e.g. XML parser, XSLT or XPath engines, or custom code.
  *
  * @see org.objectweb.asm.xml.SAXClassAdapter
@@ -340,11 +340,11 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
     }
 
     /**
-     * Returns the bytecode of the class that was build with underneath class
+     * Returns the bytecode of the class that was built with underneath class
      * writer.
      *
-     * @return the bytecode of the class that was build with underneath class
-     *         writer or null if there are no classwriter created.
+     * @return the bytecode of the class that was built with underneath class
+     *         writer or null if there are no class writers created.
      */
     public byte[] toByteArray() {
         return cw == null ? null : cw.toByteArray();

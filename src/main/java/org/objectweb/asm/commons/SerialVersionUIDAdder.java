@@ -52,7 +52,7 @@ import org.objectweb.asm.Opcodes;
  *   ClassWriter cw = new ClassWriter(...);
  *   ClassVisitor sv = new SerialVersionUIDAdder(cw);
  *   ClassVisitor ca = new MyClassAdapter(sv);
- *   new ClassReader(orginalClass).accept(ca, false);
+ *   new ClassReader(originalClass).accept(ca, false);
  * </pre>
  * 
  * The SVUID algorithm can be found <a href=

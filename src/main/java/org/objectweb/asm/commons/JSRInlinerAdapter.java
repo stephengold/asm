@@ -653,7 +653,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
 
         /**
          * Returns the "owner" of a particular instruction relative to this
-         * instantiation: the owner referes to the Instantiation which will emit
+         * instantiation: the owner refers to the Instantiation which will emit
          * the version of this instruction that we will execute.
          * 
          * Typically, the return value is either {@code this} or
@@ -709,7 +709,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
         /**
          * Looks up the label {@code l} in the {@code rangeTable},
          * thus translating it from a Label in the original code, to a Label in
-         * the inlined code that is appropriate for use by an try/catch or
+         * the inlined code that is appropriate for use by a try/catch or
          * variable use annotation.
          * 
          * @param l The label we will be translating

@@ -49,7 +49,7 @@ public interface FieldVisitor {
     AnnotationVisitor visitAnnotation(String desc, boolean visible);
 
     /**
-     * Visits a non standard attribute of the field.
+     * Visits a non-standard attribute of the field.
      * 
      * @param attr an attribute.
      */

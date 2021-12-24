@@ -1232,7 +1232,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     }
 
     /**
-     * Generates the instruction to push the value of a non static field on the
+     * Generates the instruction to push the value of a non-static field on the
      * stack.
      * 
      * @param owner the class in which the field is defined.
@@ -1244,7 +1244,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     }
 
     /**
-     * Generates the instruction to store the top stack value in a non static
+     * Generates the instruction to store the top stack value in a non-static
      * field.
      * 
      * @param owner the class in which the field is defined.
@@ -1383,7 +1383,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     }
 
     // ------------------------------------------------------------------------
-    // Miscelaneous instructions
+    // Miscellaneous instructions
     // ------------------------------------------------------------------------
 
     /**

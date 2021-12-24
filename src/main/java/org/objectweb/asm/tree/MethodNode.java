@@ -80,7 +80,7 @@ public class MethodNode extends MemberNode implements MethodVisitor {
      * The default value of this annotation interface method. This field must be
      * a {@link Byte}, {@link Boolean}, {@link Character}, {@link Short},
      * {@link Integer}, {@link Long}, {@link Float}, {@link Double},
-     * {@link String} or {@link Type}, or an two elements String array (for
+     * {@link String} or {@link Type}, or a two-element String array (for
      * enumeration values), a {@link AnnotationNode}, or a {@link List} of
      * values of one of the preceding types. May be <tt>null</tt>.
      */
@@ -127,7 +127,7 @@ public class MethodNode extends MemberNode implements MethodVisitor {
     public List localVariables;
 
     /**
-     * Constructs an unitialized {@link MethodNode}.
+     * Constructs an uninitialized {@link MethodNode}.
      */
     public MethodNode() {
         this.instructions = new InsnList();

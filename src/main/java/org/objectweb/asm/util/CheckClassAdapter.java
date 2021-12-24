@@ -75,9 +75,9 @@ import org.objectweb.asm.tree.analysis.Frame;
  *   assertTrue(sw.toString(), sw.toString().length()==0);
  * </pre>
  * 
- * Above code runs transformed bytecode trough the
+ * Above code runs transformed bytecode through the
  * {@code CheckClassAdapter}. It won't be exactly the same verification
- * as JVM does, but it run data flow analysis for the code of each method and
+ * as JVM does, but it runs dataflow analysis for the code of each method and
  * checks that expectations are met for each method instruction.
  * 
  * <p>If method bytecode has errors, assertion text will show the erroneous

@@ -40,9 +40,9 @@ final class Frame {
      * Frames are computed in a two steps process: during the visit of each
      * instruction, the state of the frame at the end of current basic block is
      * updated by simulating the action of the instruction on the previous state
-     * of this so called "output frame". In visitMaxs, a fix point algorithm is
+     * of this so-called "output frame". In visitMaxs, a fix point algorithm is
      * used to compute the "input frame" of each basic block, i.e. the stack map
-     * frame at the begining of the basic block, starting from the input frame
+     * frame at the beginning of the basic block, starting from the input frame
      * of the first basic block (which is computed from the method descriptor),
      * and by using the previously computed output frames to compute the input
      * state of the other blocks.
@@ -106,7 +106,7 @@ final class Frame {
     static final int ELEMENT_OF = 0xF0000000;
 
     /**
-     * Mask to get the kind of a frame type.
+     * Mask to get the kind of frame type.
      * 
      * @see #BASE
      * @see #LOCAL
@@ -154,7 +154,7 @@ final class Frame {
     private static final int LOCAL = 0x2000000;
 
     /**
-     * Kind of the the types that are relative to the stack of an input stack
+     * Kind of the types that are relative to the stack of an input stack
      * map frame. The value of such types is a position relatively to the top of
      * this stack.
      */
@@ -499,7 +499,7 @@ final class Frame {
     /**
      * The types that are initialized in the basic block. A constructor
      * invocation on an UNINITIALIZED or UNINITIALIZED_THIS type must replace
-     * <i>every occurence</i> of this type in the local variables and in the
+     * <i>every occurrence</i> of this type in the local variables and in the
      * operand stack. This cannot be done during the first phase of the
      * algorithm since, during this phase, the local variables and the operand
      * stack are not completely computed. It is therefore necessary to store the

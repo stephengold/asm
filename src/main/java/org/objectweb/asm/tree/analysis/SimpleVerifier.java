@@ -49,7 +49,7 @@ public class SimpleVerifier extends BasicVerifier {
     private final Type currentClass;
 
     /**
-     * The super class of the class that is verified.
+     * The superclass of the class that is verified.
      */
     private final Type currentSuperClass;
 
@@ -75,7 +75,7 @@ public class SimpleVerifier extends BasicVerifier {
      * class will not be loaded into the JVM since it may be incorrect.
      * 
      * @param currentClass the class that is verified.
-     * @param currentSuperClass the super class of the class that is verified.
+     * @param currentSuperClass the superclass of the class that is verified.
      * @param isInterface if the class that is verified is an interface.
      */
     public SimpleVerifier(
@@ -91,7 +91,7 @@ public class SimpleVerifier extends BasicVerifier {
      * class will not be loaded into the JVM since it may be incorrect.
      * 
      * @param currentClass the class that is verified.
-     * @param currentSuperClass the super class of the class that is verified.
+     * @param currentSuperClass the superclass of the class that is verified.
      * @param currentClassInterfaces the interfaces implemented by the class
      *        that is verified.
      * @param isInterface if the class that is verified is an interface.

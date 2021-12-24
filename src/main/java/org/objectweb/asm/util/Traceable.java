@@ -32,7 +32,7 @@ package org.objectweb.asm.util;
 import java.util.Map;
 
 /**
- * An attribute that can print eadable representation of the attribute.
+ * An attribute that can print a readable representation of the attribute.
  * 
  * Implementation should construct readable output from an attribute data
  * structures for current attribute state. Such representation could be used in

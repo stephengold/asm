@@ -63,7 +63,7 @@ class MethodWriter implements MethodVisitor {
 
     /**
      * Frame has exactly the same locals as the previous stack map frame and
-     * number of stack items is 1. Offset is bigger then 63;
+     * number of stack items is 1. Offset is bigger than 63;
      */
     static final int SAME_LOCALS_1_STACK_ITEM_FRAME_EXTENDED = 247; // f7
 
@@ -76,7 +76,7 @@ class MethodWriter implements MethodVisitor {
 
     /**
      * Frame has exactly the same locals as the previous stack map frame and
-     * number of stack items is zero. Offset is bigger then 63;
+     * number of stack items is zero. Offset is bigger than 63;
      */
     static final int SAME_FRAME_EXTENDED = 251; // fb
 
@@ -214,7 +214,7 @@ class MethodWriter implements MethodVisitor {
     private int synthetics;
 
     /**
-     * The non standard attributes of the method.
+     * The non-standard attributes of the method.
      */
     private Attribute attrs;
 
@@ -318,7 +318,7 @@ class MethodWriter implements MethodVisitor {
     private ByteVector lineNumber;
 
     /**
-     * The non standard attributes of the method's code.
+     * The non-standard attributes of the method's code.
      */
     private Attribute cattrs;
 
@@ -336,7 +336,7 @@ class MethodWriter implements MethodVisitor {
 
     /*
      * Fields for the control flow graph analysis algorithm (used to compute the
-     * maximum stack size). A control flow graph contains one node per "basic
+     * maximum stack size). A control-flow graph contains one node per "basic
      * block", and one edge per "jump" from one basic block to another. Each
      * node (i.e., each basic block) is represented by the Label object that
      * corresponds to the first instruction of this basic block. Each node also
@@ -1502,7 +1502,7 @@ class MethodWriter implements MethodVisitor {
     /**
      * Adds a successor to the {@link #currentBlock currentBlock} block.
      * 
-     * @param info information about the control flow edge to be added.
+     * @param info information about the control-flow edge to be added.
      * @param successor the successor block to be added to the current block.
      */
     private void addSuccessor(final int info, final Label successor) {
@@ -2077,15 +2077,15 @@ class MethodWriter implements MethodVisitor {
     /**
      * Resizes and replaces the temporary instructions inserted by
      * {@link Label#resolve} for wide forward jumps, while keeping jump offsets
-     * and instruction addresses consistent. This may require to resize other
-     * existing instructions, or even to introduce new instructions: for
+     * and instruction addresses consistent. This may require resizing other
+     * existing instructions, or even introducing new instructions: for
      * example, increasing the size of an instruction by 2 at the middle of a
-     * method can increases the offset of an IFEQ instruction from 32766 to
+     * method can increase the offset of an IFEQ instruction from 32766 to
      * 32768, in which case IFEQ 32766 must be replaced with IFNEQ 8 GOTO_W
-     * 32765. This, in turn, may require to increase the size of another jump
+     * 32765. This, in turn, may require increasing the size of another jump
      * instruction, and so on... All these operations are handled automatically
-     * by this method. <p> <i>This method must be called after all the method
-     * that is being built has been visited</i>. In particular, the
+     * by this method. <p> <i>This method must be called after all the methods
+     * that are being built have been visited</i>. In particular, the
      * {@link Label Label} objects used to construct the method are no longer
      * valid after this method has been called.
      */

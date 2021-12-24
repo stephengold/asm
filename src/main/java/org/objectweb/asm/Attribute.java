@@ -30,7 +30,7 @@
 package org.objectweb.asm;
 
 /**
- * A non standard class, field, method or code attribute.
+ * A non-standard class, field, method, or code attribute.
  * 
  * @author Eric Bruneton
  * @author Eugene Kuleshov

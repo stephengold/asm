@@ -46,7 +46,7 @@ import org.objectweb.asm.signature.SignatureReader;
  * visits. This class visitor can be used alone (see the {@link #main main}
  * method) to disassemble a class. It can also be used in the middle of class
  * visitor chain to trace the class that is visited at a given point in this
- * chain. This may be uselful for debugging purposes. <p> The trace printed when
+ * chain. This may be useful for debugging purposes. <p> The trace printed when
  * visiting the <tt>Hello</tt> class is the following: <p> <blockquote>
  * 
  * <pre>

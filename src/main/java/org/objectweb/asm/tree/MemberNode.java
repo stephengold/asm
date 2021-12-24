@@ -55,7 +55,7 @@ public abstract class MemberNode {
     public List invisibleAnnotations;
 
     /**
-     * The non standard attributes of this class, field or method. This list is
+     * The non-standard attributes of this class, field or method. This list is
      * a list of {@link Attribute} objects. May be <tt>null</tt>.
      */
     public List attrs;
@@ -93,7 +93,7 @@ public abstract class MemberNode {
     }
 
     /**
-     * Visits a non standard attribute of this class, field or method.
+     * Visits a non-standard attribute of this class, field or method.
      * 
      * @param attr an attribute.
      */

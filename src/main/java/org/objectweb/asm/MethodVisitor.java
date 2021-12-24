@@ -59,7 +59,7 @@ public interface MethodVisitor {
      *         annotation interface method, or <tt>null</tt> if this visitor
      *         is not interested in visiting this default value. The 'name'
      *         parameters passed to the methods of this annotation visitor are
-     *         ignored. Moreover, exacly one visit method must be called on this
+     *         ignored. Moreover, exactly one visit method must be called on this
      *         annotation visitor, followed by visitEnd.
      */
     AnnotationVisitor visitAnnotationDefault();
@@ -89,21 +89,21 @@ public interface MethodVisitor {
         boolean visible);
 
     /**
-     * Visits a non standard attribute of this method.
+     * Visits a non-standard attribute of this method.
      * 
      * @param attr an attribute.
      */
     void visitAttribute(Attribute attr);
 
     /**
-     * Starts the visit of the method's code, if any (i.e. non abstract method).
+     * Starts the visit of the method's code, if any (i.e. non-abstract method).
      */
     void visitCode();
 
     /**
      * Visits the current state of the local variables and operand stack
      * elements. This method must(*) be called <i>just before</i> any
-     * instruction <b>i</b> that follows an unconditionnal branch instruction
+     * instruction <b>i</b> that follows an unconditional branch instruction
      * such as GOTO or THROW, that is the target of a jump instruction, or that
      * starts an exception handler block. The visited types must describe the
      * values of the local variables and of the operand stack elements <i>just
@@ -277,7 +277,7 @@ public interface MethodVisitor {
      * Visits a LDC instruction.
      * 
      * @param cst the constant to be loaded on the stack. This parameter must be
-     *        a non null {@link Integer}, a {@link Float}, a {@link Long}, a
+     *        a non-null {@link Integer}, a {@link Float}, a {@link Long}, a
      *        {@link Double} a {@link String} (or a {@link Type} for
      *        <tt>.class</tt> constants, for classes whose version is 49.0 or
      *        more).

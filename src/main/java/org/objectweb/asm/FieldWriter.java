@@ -86,7 +86,7 @@ final class FieldWriter implements FieldVisitor {
     private AnnotationWriter ianns;
 
     /**
-     * The non standard attributes of this field. May be <tt>null</tt>.
+     * The non-standard attributes of this field. May be <tt>null</tt>.
      */
     private Attribute attrs;
 

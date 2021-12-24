@@ -303,7 +303,7 @@ public class InsnList {
     }
 
     /**
-     * Inserts the given instruction at the begining of this list.
+     * Inserts the given instruction at the beginning of this list.
      * 
      * @param insn an instruction, <i>which must not belong to any
      *        {@link InsnList}</i>.
@@ -328,7 +328,7 @@ public class InsnList {
     }
 
     /**
-     * Inserts the given instructions at the begining of this list.
+     * Inserts the given instructions at the beginning of this list.
      * 
      * @param insns an instruction list, which is cleared during the process.
      * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,

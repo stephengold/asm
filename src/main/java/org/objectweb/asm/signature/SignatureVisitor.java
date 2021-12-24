@@ -91,9 +91,9 @@ public interface SignatureVisitor {
     SignatureVisitor visitInterfaceBound();
 
     /**
-     * Visits the type of the super class.
+     * Visits the type of the superclass.
      * 
-     * @return a non null visitor to visit the signature of the super class
+     * @return a non-null visitor to visit the signature of the superclass
      *         type.
      */
     SignatureVisitor visitSuperclass();

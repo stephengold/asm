@@ -739,7 +739,7 @@ public class CheckMethodAdapter extends MethodAdapter {
      * Checks that the given value is a signed byte.
      * 
      * @param value the value to be checked.
-     * @param msg an message to be used in case of error.
+     * @param msg a message to be used in case of error.
      */
     static void checkSignedByte(final int value, final String msg) {
         if (value < Byte.MIN_VALUE || value > Byte.MAX_VALUE) {
@@ -752,7 +752,7 @@ public class CheckMethodAdapter extends MethodAdapter {
      * Checks that the given value is a signed short.
      * 
      * @param value the value to be checked.
-     * @param msg an message to be used in case of error.
+     * @param msg a message to be used in case of error.
      */
     static void checkSignedShort(final int value, final String msg) {
         if (value < Short.MIN_VALUE || value > Short.MAX_VALUE) {
@@ -765,7 +765,7 @@ public class CheckMethodAdapter extends MethodAdapter {
      * Checks that the given value is an unsigned short.
      * 
      * @param value the value to be checked.
-     * @param msg an message to be used in case of error.
+     * @param msg a message to be used in case of error.
      */
     static void checkUnsignedShort(final int value, final String msg) {
         if (value < 0 || value > 65535) {
@@ -932,12 +932,12 @@ public class CheckMethodAdapter extends MethodAdapter {
     }
 
     /**
-     * Checks that a the given substring is a valid type descriptor.
+     * Checks that the given substring is a valid type descriptor.
      * 
      * @param desc the string to be checked.
      * @param start index of the first character of the identifier (inclusive).
      * @param canBeVoid <tt>true</tt> if <tt>V</tt> can be considered valid.
-     * @return the index of the last character of the type decriptor, plus one.
+     * @return the index of the last character of the type descriptor, plus one.
      */
     static int checkDesc(
         final String desc,

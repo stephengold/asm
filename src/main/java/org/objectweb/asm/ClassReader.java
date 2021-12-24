@@ -230,11 +230,11 @@ public class ClassReader {
     }
 
     /**
-     * Returns the internal of name of the super class (see
+     * Returns the internal of name of the superclass (see
      * {@link Type#getInternalName() getInternalName}). For interfaces, the
-     * super class is {@link Object}.
+     * superclass is {@link Object}.
      * 
-     * @return the internal name of super class, or <tt>null</tt> for
+     * @return the internal name of superclass, or <tt>null</tt> for
      *         {@link Object} class.
      * 
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
@@ -1754,7 +1754,7 @@ public class ClassReader {
      * @param labels the already created labels, indexed by their offset. If a
      *        label already exists for offset this method must not create a new
      *        one. Otherwise it must store the new label in this array.
-     * @return a non null Label, which must be equal to labels[offset].
+     * @return a non-null Label, which must be equal to labels[offset].
      */
     protected Label readLabel(int offset, Label[] labels) {
         if (labels[offset] == null) {

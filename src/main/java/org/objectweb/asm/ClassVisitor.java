@@ -51,9 +51,9 @@ public interface ClassVisitor {
      * @param signature the signature of this class. May be <tt>null</tt> if
      *        the class is not a generic one, and does not extend or implement
      *        generic classes or interfaces.
-     * @param superName the internal of name of the super class (see
+     * @param superName the internal of name of the superclass (see
      *        {@link Type#getInternalName() getInternalName}). For interfaces,
-     *        the super class is {@link Object}. May be <tt>null</tt>, but
+     *        the superclass is {@link Object}. May be <tt>null</tt>, but
      *        only for the {@link Object} class.
      * @param interfaces the internal names of the class's interfaces (see
      *        {@link Type#getInternalName() getInternalName}). May be
@@ -72,7 +72,7 @@ public interface ClassVisitor {
      * 
      * @param source the name of the source file from which the class was
      *        compiled. May be <tt>null</tt>.
-     * @param debug additional debug information to compute the correspondance
+     * @param debug additional debug information to compute the correspondence
      *        between source and compiled elements of the class. May be
      *        <tt>null</tt>.
      */
@@ -103,7 +103,7 @@ public interface ClassVisitor {
     AnnotationVisitor visitAnnotation(String desc, boolean visible);
 
     /**
-     * Visits a non standard attribute of the class.
+     * Visits a non-standard attribute of the class.
      * 
      * @param attr an attribute.
      */
@@ -146,7 +146,7 @@ public interface ClassVisitor {
      *        {@link Double} or a {@link String} (for <tt>int</tt>,
      *        <tt>float</tt>, <tt>long</tt> or <tt>String</tt> fields
      *        respectively). <i>This parameter is only used for static fields</i>.
-     *        Its value is ignored for non static fields, which must be
+     *        Its value is ignored for non-static fields, which must be
      *        initialized through bytecode instructions in constructors or
      *        methods.
      * @return a visitor to visit field annotations and attributes, or
