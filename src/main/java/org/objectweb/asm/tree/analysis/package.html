@@ -50,10 +50,10 @@ for (int i = 0; i < methods.size(); ++i) {
         Analyzer a = new Analyzer(new BasicInterpreter());
         a.analyze(cn.name, method);
         Frame[] frames = a.getFrames();
-        // Elements of the frames arrray now contains info for each instruction 
+        // Elements of the frames array now contain info for each instruction
         // from the analyzed method. BasicInterpreter creates BasicValue, that
         // is using simplified type system that distinguishes the UNINITIALZED, 
-        // INT, FLOAT, LONG, DOUBLE, REFERENCE and RETURNADDRESS types.
+        // INT, FLOAT, LONG, DOUBLE, REFERENCE. and RETURNADDRESS types.
         ...
     }
 }   
