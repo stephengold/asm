@@ -15,10 +15,10 @@ ext {
     websiteUrl = 'https://github.com/stephengold/asm'
 }
 
-sourceCompatibility = '1.7'
-targetCompatibility = '1.7'
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
 
-tasks.withType(JavaCompile) { // compile-time options:
+tasks.withType(JavaCompile) { // Java compile-time options:
     options.compilerArgs << '-Xdiags:verbose'
     //options.compilerArgs << '-Xlint:unchecked'
     options.deprecation = true
