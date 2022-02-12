@@ -6,7 +6,6 @@ plugins {
     id 'signing'
 }
 
-description = 'A very small and fast Java bytecode manipulation framework'
 ext {
     group = 'com.github.stephengold'
     artifact = 'asm-all'
