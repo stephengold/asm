@@ -24,7 +24,7 @@ tasks.withType(JavaCompile) { // Java compile-time options:
         options.compilerArgs << '-Xlint:-options'
     }
     //options.compilerArgs << '-Xlint:unchecked'
-    options.deprecation = true
+    options.deprecation = true // to provide detailed deprecation warnings
     options.encoding = 'UTF-8'
 }
 
@@ -63,7 +63,7 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
-build.dependsOn('module', 'moduleAsc', 'pom', 'pomAsc')
+assemble.dependsOn('module', 'moduleAsc', 'pom', 'pomAsc')
 task('module', type: Copy) {
     dependsOn 'generateMetadataFileForMavenPublication'
     description 'Copies the module metadata to build/libs.'
@@ -159,9 +159,11 @@ publishing {
     }
 }
 generateMetadataFileForMavenPublication.dependsOn('pom')
+publishMavenPublicationToMavenLocal.dependsOn('assemble')
 publishMavenPublicationToMavenLocal.doLast {
     println 'installed locally as ' + project.ext.baseName
 }
+publishMavenPublicationToOSSRHRepository.dependsOn('assemble')
 
 // signing tasks
 
