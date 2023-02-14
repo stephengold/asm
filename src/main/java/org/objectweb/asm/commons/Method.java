@@ -56,10 +56,10 @@ public class Method {
     /**
      * Maps primitive Java type names to their descriptors.
      */
-    private static final Map DESCRIPTORS;
+    private static final Map<String,String> DESCRIPTORS;
 
     static {
-        DESCRIPTORS = new HashMap();
+        DESCRIPTORS = new HashMap<>();
         DESCRIPTORS.put("void", "V");
         DESCRIPTORS.put("byte", "B");
         DESCRIPTORS.put("char", "C");
