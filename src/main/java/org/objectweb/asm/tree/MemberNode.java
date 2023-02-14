@@ -46,19 +46,19 @@ public abstract class MemberNode {
      * The runtime visible annotations of this class, field or method. This list
      * is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
      */
-    public List visibleAnnotations;
+    public List<AnnotationNode> visibleAnnotations;
 
     /**
      * The runtime invisible annotations of this class, field or method. This
      * list is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
      */
-    public List invisibleAnnotations;
+    public List<AnnotationNode> invisibleAnnotations;
 
     /**
      * The non-standard attributes of this class, field or method. This list is
      * a list of {@link Attribute} objects. May be <tt>null</tt>.
      */
-    public List attrs;
+    public List<Attribute> attrs;
 
     /**
      * Constructs a new {@link MemberNode}.
@@ -80,12 +80,12 @@ public abstract class MemberNode {
         AnnotationNode an = new AnnotationNode(desc);
         if (visible) {
             if (visibleAnnotations == null) {
-                visibleAnnotations = new ArrayList(1);
+                visibleAnnotations = new ArrayList<>(1);
             }
             visibleAnnotations.add(an);
         } else {
             if (invisibleAnnotations == null) {
-                invisibleAnnotations = new ArrayList(1);
+                invisibleAnnotations = new ArrayList<>(1);
             }
             invisibleAnnotations.add(an);
         }
@@ -99,7 +99,7 @@ public abstract class MemberNode {
      */
     public void visitAttribute(final Attribute attr) {
         if (attrs == null) {
-            attrs = new ArrayList(1);
+            attrs = new ArrayList<>(1);
         }
         attrs.add(attr);
     }
