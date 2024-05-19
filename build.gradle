@@ -1,7 +1,7 @@
 // Gradle script to build the asm project
 
 plugins {
-    id 'java-library'  // to build a JVM library
+    id 'java-library'  // to build JVM libraries
     id 'maven-publish' // to publish artifacts to Maven repositories
     id 'signing'       // to sign artifacts for publication
 }
