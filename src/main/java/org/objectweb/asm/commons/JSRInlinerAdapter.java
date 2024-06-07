@@ -101,10 +101,10 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
      *        deprecated.
      * @param name the method's name.
      * @param desc the method's descriptor (see {@link Type}).
-     * @param signature the method's signature. May be <tt>null</tt>.
+     * @param signature the method's signature. May be {@code null}.
      * @param exceptions the internal names of the method's exception classes
      *        (see {@link Type#getInternalName() getInternalName}). May be
-     *        <tt>null</tt>.
+     *        {@code null}.
      */
     public JSRInlinerAdapter(
         final MethodVisitor mv,

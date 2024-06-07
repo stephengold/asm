@@ -65,7 +65,7 @@ public class MethodNode extends MemberNode implements MethodVisitor {
     public String desc;
 
     /**
-     * The method's signature. May be <tt>null</tt>.
+     * The method's signature. May be {@code null}.
      */
     public String signature;
 
@@ -82,19 +82,19 @@ public class MethodNode extends MemberNode implements MethodVisitor {
      * {@link Integer}, {@link Long}, {@link Float}, {@link Double},
      * {@link String} or {@link Type}, or a two-element String array (for
      * enumeration values), a {@link AnnotationNode}, or a {@link List} of
-     * values of one of the preceding types. May be <tt>null</tt>.
+     * values of one of the preceding types. May be {@code null}.
      */
     public Object annotationDefault;
 
     /**
      * The runtime visible parameter annotations of this method. These lists are
-     * lists of {@link AnnotationNode} objects. May be <tt>null</tt>.
+     * lists of {@link AnnotationNode} objects. May be {@code null}.
      */
     public List[] visibleParameterAnnotations;
 
     /**
      * The runtime invisible parameter annotations of this method. These lists
-     * are lists of {@link AnnotationNode} objects. May be <tt>null</tt>.
+     * are lists of {@link AnnotationNode} objects. May be {@code null}.
      */
     public List[] invisibleParameterAnnotations;
 
@@ -122,7 +122,7 @@ public class MethodNode extends MemberNode implements MethodVisitor {
 
     /**
      * The local variables of this method. This list is a list of
-     * {@link LocalVariableNode} objects. May be <tt>null</tt>
+     * {@link LocalVariableNode} objects. May be {@code null}
      */
     public List localVariables;
 
@@ -141,10 +141,10 @@ public class MethodNode extends MemberNode implements MethodVisitor {
      *        deprecated.
      * @param name the method's name.
      * @param desc the method's descriptor (see {@link Type}).
-     * @param signature the method's signature. May be <tt>null</tt>.
+     * @param signature the method's signature. May be {@code null}.
      * @param exceptions the internal names of the method's exception classes
      *        (see {@link Type#getInternalName() getInternalName}). May be
-     *        <tt>null</tt>.
+     *        {@code null}.
      */
     public MethodNode(
         final int access,

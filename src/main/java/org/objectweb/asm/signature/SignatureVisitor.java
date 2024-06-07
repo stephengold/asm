@@ -34,20 +34,20 @@ package org.objectweb.asm.signature;
  * called in one of the three following orders (the last one is the only valid
  * order for a {@link SignatureVisitor} that is returned by a method of this
  * interface): <ul> <li><i>ClassSignature</i> = (
- * <tt>visitFormalTypeParameter</tt> 
- *   <tt>visitClassBound</tt>?
- * <tt>visitInterfaceBound</tt>* )* ( <tt>visitSuperClass</tt> 
- *   <tt>visitInterface</tt>* )</li>
- * <li><i>MethodSignature</i> = ( <tt>visitFormalTypeParameter</tt> 
- *   <tt>visitClassBound</tt>?
- * <tt>visitInterfaceBound</tt>* )* ( <tt>visitParameterType</tt>*
- * <tt>visitReturnType</tt> 
- *   <tt>visitExceptionType</tt>* )</li> <li><i>TypeSignature</i> =
- * <tt>visitBaseType</tt> | <tt>visitTypeVariable</tt> |
- * <tt>visitArrayType</tt> | (
- * <tt>visitClassType</tt> <tt>visitTypeArgument</tt>* (
- * <tt>visitInnerClassType</tt> <tt>visitTypeArgument</tt>* )*
- * <tt>visitEnd</tt> ) )</li> </ul>
+ * {@code visitFormalTypeParameter} 
+ *   {@code visitClassBound}?
+ * {@code visitInterfaceBound}* )* ( {@code visitSuperClass} 
+ *   {@code visitInterface}* )</li>
+ * <li><i>MethodSignature</i> = ( {@code visitFormalTypeParameter} 
+ *   {@code visitClassBound}?
+ * {@code visitInterfaceBound}* )* ( {@code visitParameterType}*
+ * {@code visitReturnType} 
+ *   {@code visitExceptionType}* )</li> <li><i>TypeSignature</i> =
+ * {@code visitBaseType} | {@code visitTypeVariable} |
+ * {@code visitArrayType} | (
+ * {@code visitClassType} {@code visitTypeArgument}* (
+ * {@code visitInnerClassType} {@code visitTypeArgument}* )*
+ * {@code visitEnd} ) )</li> </ul>
  * 
  * @author Thomas Hallgren
  * @author Eric Bruneton
@@ -130,7 +130,7 @@ public interface SignatureVisitor {
      * Visits a signature corresponding to a primitive type.
      * 
      * @param descriptor the descriptor of the primitive type, or 'V' for
-     *        <tt>void</tt>.
+     *        {@code void}.
      */
     void visitBaseType(char descriptor);
 

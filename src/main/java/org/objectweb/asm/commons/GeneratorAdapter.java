@@ -269,9 +269,9 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * @param access access flags of the adapted method.
      * @param method the adapted method.
      * @param signature the signature of the adapted method (may be
-     *        <tt>null</tt>).
+     *        {@code null}).
      * @param exceptions the exceptions thrown by the adapted method (may be
-     *        <tt>null</tt>).
+     *        {@code null}).
      * @param cv the class visitor to which this adapter delegates calls.
      */
     public GeneratorAdapter(
@@ -379,7 +379,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to push the given value on the stack.
      * 
-     * @param value the value to be pushed on the stack. May be <tt>null</tt>.
+     * @param value the value to be pushed on the stack. May be {@code null}.
      */
     public void push(final String value) {
         if (value == null) {
@@ -974,7 +974,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * @param type the type of the top two stack values.
      * @param mode how these values must be compared. One of EQ, NE, LT, GE, GT,
      *        LE.
-     * @param label where to jump if the comparison result is <tt>true</tt>.
+     * @param label where to jump if the comparison result is {@code true}.
      */
     public void ifCmp(final Type type, final int mode, final Label label) {
         int intOp = -1;
@@ -1042,7 +1042,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * 
      * @param mode how these values must be compared. One of EQ, NE, LT, GE, GT,
      *        LE.
-     * @param label where to jump if the comparison result is <tt>true</tt>.
+     * @param label where to jump if the comparison result is {@code true}.
      */
     public void ifICmp(final int mode, final Label label) {
         ifCmp(Type.INT_TYPE, mode, label);
@@ -1054,7 +1054,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * 
      * @param mode how these values must be compared. One of EQ, NE, LT, GE, GT,
      *        LE.
-     * @param label where to jump if the comparison result is <tt>true</tt>.
+     * @param label where to jump if the comparison result is {@code true}.
      */
     public void ifZCmp(final int mode, final Label label) {
         mv.visitJumpInsn(mode, label);
@@ -1064,7 +1064,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates the instruction to jump to the given label if the top stack
      * value is null.
      * 
-     * @param label where to jump if the condition is <tt>true</tt>.
+     * @param label where to jump if the condition is {@code true}.
      */
     public void ifNull(final Label label) {
         mv.visitJumpInsn(Opcodes.IFNULL, label);
@@ -1074,7 +1074,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates the instruction to jump to the given label if the top stack
      * value is not null.
      * 
-     * @param label where to jump if the condition is <tt>true</tt>.
+     * @param label where to jump if the condition is {@code true}.
      */
     public void ifNonNull(final Label label) {
         mv.visitJumpInsn(Opcodes.IFNONNULL, label);
@@ -1083,7 +1083,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to jump to the given label.
      * 
-     * @param label where to jump if the condition is <tt>true</tt>.
+     * @param label where to jump if the condition is {@code true}.
      */
     public void goTo(final Label label) {
         mv.visitJumpInsn(Opcodes.GOTO, label);
@@ -1124,8 +1124,8 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * 
      * @param keys the switch case keys.
      * @param generator a generator to generate the code for the switch cases.
-     * @param useTable <tt>true</tt> to use a TABLESWITCH instruction, or
-     *        <tt>false</tt> to use a LOOKUPSWITCH instruction.
+     * @param useTable {@code true} to use a TABLESWITCH instruction, or
+     *        {@code false} to use a LOOKUPSWITCH instruction.
      */
     public void tableSwitch(
         final int[] keys,

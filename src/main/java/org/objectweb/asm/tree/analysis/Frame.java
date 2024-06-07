@@ -607,8 +607,8 @@ public class Frame {
      * 
      * @param frame a frame.
      * @param interpreter the interpreter used to merge values.
-     * @return <tt>true</tt> if this frame has been changed as a result of the
-     *         merge operation, or <tt>false</tt> otherwise.
+     * @return {@code true} if this frame has been changed as a result of the
+     *         merge operation, or {@code false} otherwise.
      * @throws AnalyzerException if the frames have incompatible sizes.
      */
     public boolean merge(final Frame frame, final Interpreter interpreter)
@@ -634,8 +634,8 @@ public class Frame {
      * @param frame a frame
      * @param access the local variables that have been accessed by the
      *        subroutine to which the RET instruction corresponds.
-     * @return <tt>true</tt> if this frame has been changed as a result of the
-     *         merge operation, or <tt>false</tt> otherwise.
+     * @return {@code true} if this frame has been changed as a result of the
+     *         merge operation, or {@code false} otherwise.
      */
     public boolean merge(final Frame frame, final boolean[] access) {
         boolean changes = false;

@@ -48,7 +48,7 @@ public class SourceValue implements Value {
 
     /**
      * The instructions that can produce this value. For example, for the Java
-     * code below, the instructions that can produce the value of <tt>i</tt>
+     * code below, the instructions that can produce the value of {@code i}
      * at line 5 are the txo ISTORE instructions at line 1 and 3:
      * 
      * <pre>

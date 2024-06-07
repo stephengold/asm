@@ -44,19 +44,19 @@ public abstract class MemberNode {
 
     /**
      * The runtime visible annotations of this class, field or method. This list
-     * is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
+     * is a list of {@link AnnotationNode} objects. May be {@code null}.
      */
     public List<AnnotationNode> visibleAnnotations;
 
     /**
      * The runtime invisible annotations of this class, field or method. This
-     * list is a list of {@link AnnotationNode} objects. May be <tt>null</tt>.
+     * list is a list of {@link AnnotationNode} objects. May be {@code null}.
      */
     public List<AnnotationNode> invisibleAnnotations;
 
     /**
      * The non-standard attributes of this class, field or method. This list is
-     * a list of {@link Attribute} objects. May be <tt>null</tt>.
+     * a list of {@link Attribute} objects. May be {@code null}.
      */
     public List<Attribute> attrs;
 
@@ -70,7 +70,7 @@ public abstract class MemberNode {
      * Visits an annotation of this class, field or method.
      * 
      * @param desc the class descriptor of the annotation class.
-     * @param visible <tt>true</tt> if the annotation is visible at runtime.
+     * @param visible {@code true} if the annotation is visible at runtime.
      * @return a visitor to visit the annotation values.
      */
     public AnnotationVisitor visitAnnotation(

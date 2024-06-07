@@ -76,17 +76,17 @@ final class FieldWriter implements FieldVisitor {
     private int value;
 
     /**
-     * The runtime visible annotations of this field. May be <tt>null</tt>.
+     * The runtime visible annotations of this field. May be {@code null}.
      */
     private AnnotationWriter anns;
 
     /**
-     * The runtime invisible annotations of this field. May be <tt>null</tt>.
+     * The runtime invisible annotations of this field. May be {@code null}.
      */
     private AnnotationWriter ianns;
 
     /**
-     * The non-standard attributes of this field. May be <tt>null</tt>.
+     * The non-standard attributes of this field. May be {@code null}.
      */
     private Attribute attrs;
 
@@ -101,8 +101,8 @@ final class FieldWriter implements FieldVisitor {
      * @param access the field's access flags (see {@link Opcodes}).
      * @param name the field's name.
      * @param desc the field's descriptor (see {@link Type}).
-     * @param signature the field's signature. May be <tt>null</tt>.
-     * @param value the field's constant value. May be <tt>null</tt>.
+     * @param signature the field's signature. May be {@code null}.
+     * @param value the field's constant value. May be {@code null}.
      */
     FieldWriter(
         final ClassWriter cw,

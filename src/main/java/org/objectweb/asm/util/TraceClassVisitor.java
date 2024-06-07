@@ -47,7 +47,7 @@ import org.objectweb.asm.signature.SignatureReader;
  * method) to disassemble a class. It can also be used in the middle of class
  * visitor chain to trace the class that is visited at a given point in this
  * chain. This may be useful for debugging purposes. <p> The trace printed when
- * visiting the <tt>Hello</tt> class is the following: <p> <blockquote>
+ * visiting the {@code Hello} class is the following: <p> <blockquote>
  * 
  * <pre>
  * // class version 49.0 (49)
@@ -75,7 +75,7 @@ import org.objectweb.asm.signature.SignatureReader;
  * }
  * </pre>
  * 
- * </blockquote> where <tt>Hello</tt> is defined by: <p> <blockquote>
+ * </blockquote> where {@code Hello} is defined by: <p> <blockquote>
  * 
  * <pre>
  * public class Hello {
@@ -97,7 +97,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
 
     /**
      * The {@link ClassVisitor} to which this visitor delegates calls. May be
-     * <tt>null</tt>.
+     * {@code null}.
      */
     protected final ClassVisitor cv;
 
@@ -163,7 +163,7 @@ public class TraceClassVisitor extends TraceAbstractVisitor implements
      * Constructs a new {@link TraceClassVisitor}.
      * 
      * @param cv the {@link ClassVisitor} to which this visitor delegates calls.
-     *        May be <tt>null</tt>.
+     *        May be {@code null}.
      * @param pw the print writer to be used to print the class.
      */
     public TraceClassVisitor(final ClassVisitor cv, final PrintWriter pw) {

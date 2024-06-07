@@ -91,7 +91,7 @@ public class Analyzer implements Opcodes {
      * @return the symbolic state of the execution stack frame at each bytecode
      *         instruction of the method. The size of the returned array is
      *         equal to the number of instructions (and labels) of the method. A
-     *         given frame is <tt>null</tt> if and only if the corresponding
+     *         given frame is {@code null} if and only if the corresponding
      *         instruction cannot be reached (dead code).
      * @throws AnalyzerException if a problem occurs during the analysis.
      */
@@ -370,7 +370,7 @@ public class Analyzer implements Opcodes {
      * @return the symbolic state of the execution stack frame at each bytecode
      *         instruction of the method. The size of the returned array is
      *         equal to the number of instructions (and labels) of the method. A
-     *         given frame is <tt>null</tt> if the corresponding instruction
+     *         given frame is {@code null} if the corresponding instruction
      *         cannot be reached, or if an error occurred during the analysis of
      *         the method.
      */

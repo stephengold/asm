@@ -54,7 +54,7 @@ public class AnnotationNode implements AnnotationVisitor {
      * {@link Double}, {@link String} or {@link org.objectweb.asm.Type}, or a
      * two-element String array (for enumeration values), a
      * {@link AnnotationNode}, or a {@link List} of values of one of the
-     * preceding types. The list may be <tt>null</tt> if there is no name
+     * preceding types. The list may be {@code null} if there is no name
      * value pair.
      */
     public List values;
@@ -147,7 +147,7 @@ public class AnnotationNode implements AnnotationVisitor {
     /**
      * Makes the given visitor visit this annotation.
      * 
-     * @param av an annotation visitor. Maybe <tt>null</tt>.
+     * @param av an annotation visitor. Maybe {@code null}.
      */
     public void accept(final AnnotationVisitor av) {
         if (av != null) {
@@ -165,7 +165,7 @@ public class AnnotationNode implements AnnotationVisitor {
     /**
      * Makes the given visitor visit a given annotation value.
      * 
-     * @param av an annotation visitor. Maybe <tt>null</tt>.
+     * @param av an annotation visitor. Maybe {@code null}.
      * @param name the value name.
      * @param value the actual value.
      */

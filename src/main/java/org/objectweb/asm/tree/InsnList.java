@@ -55,12 +55,12 @@ public class InsnList {
     private int size;
 
     /**
-     * The first instruction in this list. May be <tt>null</tt>.
+     * The first instruction in this list. May be {@code null}.
      */
     private AbstractInsnNode first;
 
     /**
-     * The last instruction in this list. May be <tt>null</tt>.
+     * The last instruction in this list. May be {@code null}.
      */
     private AbstractInsnNode last;
 
@@ -82,7 +82,7 @@ public class InsnList {
     /**
      * Returns the first instruction in this list.
      * 
-     * @return the first instruction in this list, or <tt>null</tt> if the
+     * @return the first instruction in this list, or {@code null} if the
      *         list is empty.
      */
     public AbstractInsnNode getFirst() {
@@ -92,7 +92,7 @@ public class InsnList {
     /**
      * Returns the last instruction in this list.
      * 
-     * @return the last instruction in this list, or <tt>null</tt> if the list
+     * @return the last instruction in this list, or {@code null} if the list
      *         is empty.
      */
     public AbstractInsnNode getLast() {
@@ -120,12 +120,12 @@ public class InsnList {
     }
 
     /**
-     * Returns <tt>true</tt> if the given instruction belongs to this list.
+     * Returns {@code true} if the given instruction belongs to this list.
      * This method always scans the instructions of this list until it finds the
      * given instruction or reaches the end of the list.
      * 
      * @param insn an instruction.
-     * @return <tt>true</tt> if the given instruction belongs to this list.
+     * @return {@code true} if the given instruction belongs to this list.
      */
     public boolean contains(final AbstractInsnNode insn) {
         AbstractInsnNode i = first;
@@ -147,7 +147,7 @@ public class InsnList {
      *         this method is undefined if the given instruction does not belong
      *         to this list</i>. Use {@link #contains contains} to test if an
      *         instruction belongs to an instruction list or not.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt> and
+     * @throws IllegalArgumentException if {@link #check} is {@code true} and
      *         if insn does not belong to this list.
      */
     public int indexOf(final AbstractInsnNode insn) {
@@ -215,7 +215,7 @@ public class InsnList {
      * @param location an instruction <i>of this list</i>.
      * @param insn another instruction, <i>which must not belong to any
      *        {@link InsnList}</i>.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if i does not belong to this list or if insn belongs to an
      *         instruction list.
      */
@@ -254,7 +254,7 @@ public class InsnList {
      * 
      * @param insn an instruction, <i>which must not belong to any
      *        {@link InsnList}</i>.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if insn belongs to an instruction list.
      */
     public void add(final AbstractInsnNode insn) {
@@ -278,7 +278,7 @@ public class InsnList {
      * Adds the given instructions to the end of this list.
      * 
      * @param insns an instruction list, which is cleared during the process.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if insn == this.
      */
     public void add(final InsnList insns) {
@@ -307,7 +307,7 @@ public class InsnList {
      * 
      * @param insn an instruction, <i>which must not belong to any
      *        {@link InsnList}</i>.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if insn belongs to an instruction list.
      */
     public void insert(final AbstractInsnNode insn) {
@@ -331,7 +331,7 @@ public class InsnList {
      * Inserts the given instructions at the beginning of this list.
      * 
      * @param insns an instruction list, which is cleared during the process.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if insn == this.
      */
     public void insert(final InsnList insns) {
@@ -362,7 +362,7 @@ public class InsnList {
      *        inserted.
      * @param insn the instruction to be inserted, <i>which must not belong to
      *        any {@link InsnList}</i>.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if i does not belong to this list or if insn belongs to an
      *         instruction list.
      */
@@ -391,7 +391,7 @@ public class InsnList {
      *        must be inserted.
      * @param insns the instruction list to be inserted, which is cleared during
      *        the process.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if i does not belong to this list or if insns == this.
      */
     public void insert(final AbstractInsnNode location, final InsnList insns) {
@@ -424,7 +424,7 @@ public class InsnList {
      *        inserted.
      * @param insn the instruction to be inserted, <i>which must not belong to
      *        any {@link InsnList}</i>.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if i does not belong to this list or if insn belongs to an
      *         instruction list.
      */
@@ -453,7 +453,7 @@ public class InsnList {
      *        must be inserted.
      * @param insns the instruction list to be inserted, which is cleared during
      *        the process.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if i does not belong to this list or if insns == this.
      */
     public void insertBefore(final AbstractInsnNode location, final InsnList insns) {
@@ -485,7 +485,7 @@ public class InsnList {
      * Removes the given instruction from this list.
      * 
      * @param insn the instruction <i>of this list</i> that must be removed.
-     * @throws IllegalArgumentException if {@link #check} is <tt>true</tt>,
+     * @throws IllegalArgumentException if {@link #check} is {@code true},
      *         and if insn does not belong to this list.
      */
     public void remove(final AbstractInsnNode insn) {

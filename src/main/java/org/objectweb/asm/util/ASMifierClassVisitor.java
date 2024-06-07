@@ -43,11 +43,11 @@ import org.objectweb.asm.Opcodes;
  * A {@link ClassVisitor} that prints the ASM code that generates the classes it
  * visits. This class visitor can be used to quickly write ASM code to generate
  * some given bytecode: <ul> <li>write the Java source code equivalent to the
- * bytecode you want to generate;</li> <li>compile it with <tt>javac</tt>;</li>
+ * bytecode you want to generate;</li> <li>compile it with {@code javac};</li>
  * <li>make a {@link ASMifierClassVisitor} visit this compiled class (see the
  * {@link #main main} method);</li> <li>edit the generated source code, if
  * necessary.</li> </ul> The source code printed when visiting the
- * <tt>Hello</tt> class is the following: <p> <blockquote>
+ * {@code Hello} class is the following: <p> <blockquote>
  * 
  * <pre>
  * import org.objectweb.asm.*;
@@ -108,7 +108,7 @@ import org.objectweb.asm.Opcodes;
  *
  * </pre>
  * 
- * </blockquote> where <tt>Hello</tt> is defined by: <p> <blockquote>
+ * </blockquote> where {@code Hello} is defined by: <p> <blockquote>
  * 
  * <pre>
  * public class Hello {

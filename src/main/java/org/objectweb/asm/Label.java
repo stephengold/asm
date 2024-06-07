@@ -274,8 +274,8 @@ public class Label {
      * @param out the bytecode of the method.
      * @param source the position of first byte of the bytecode instruction that
      *        contains this label.
-     * @param wideOffset <tt>true</tt> if the reference must be stored in 4
-     *        bytes, or <tt>false</tt> if it must be stored with 2 bytes.
+     * @param wideOffset {@code true} if the reference must be stored in 4
+     *        bytes, or {@code false} if it must be stored with 2 bytes.
      * @throws IllegalArgumentException if this label has not been created by
      *         the given code writer.
      */
@@ -343,7 +343,7 @@ public class Label {
      * @param owner the code writer that calls this method.
      * @param position the position of this label in the bytecode.
      * @param data the bytecode of the method.
-     * @return <tt>true</tt> if a blank that was left for this label was too
+     * @return {@code true} if a blank that was left for this label was too
      *         small to store the offset. In such a case the corresponding jump
      *         instruction is replaced with a pseudo instruction (using unused
      *         opcodes) using an unsigned two bytes offset. These pseudo

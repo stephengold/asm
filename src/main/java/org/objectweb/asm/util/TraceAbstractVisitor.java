@@ -103,7 +103,7 @@ public abstract class TraceAbstractVisitor extends AbstractVisitor {
      * Prints a disassembled view of the given annotation.
      * 
      * @param desc the class descriptor of the annotation class.
-     * @param visible <tt>true</tt> if the annotation is visible at runtime.
+     * @param visible {@code true} if the annotation is visible at runtime.
      * @return a visitor to visit the annotation values.
      */
     public AnnotationVisitor visitAnnotation(
@@ -162,7 +162,7 @@ public abstract class TraceAbstractVisitor extends AbstractVisitor {
      * @param type indicates if desc is an internal name, a field descriptor, a
      *        method descriptor, a class signature, ...
      * @param desc an internal name, type descriptor, or type signature. May be
-     *        <tt>null</tt>.
+     *        {@code null}.
      */
     protected void appendDescriptor(final int type, final String desc) {
         if (type == CLASS_SIGNATURE || type == FIELD_SIGNATURE

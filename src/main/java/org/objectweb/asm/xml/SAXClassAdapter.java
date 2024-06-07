@@ -70,7 +70,7 @@ public final class SAXClassAdapter extends SAXAdapter implements ClassVisitor {
      * Constructs a new {@link SAXClassAdapter SAXClassAdapter} object.
      * 
      * @param h content handler that will be used to send SAX 2.0 events.
-     * @param singleDocument if <tt>true</tt> adapter will not produce
+     * @param singleDocument if {@code true} adapter will not produce
      *        {@link ContentHandler#startDocument() startDocument()} and
      *        {@link ContentHandler#endDocument() endDocument()} events.
      */

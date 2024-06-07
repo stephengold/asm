@@ -65,7 +65,7 @@ public class AnalyzerAdapter extends MethodAdapter {
      * two elements, the second one being TOP). Reference types are represented
      * by String objects (representing internal names), and uninitialized types
      * by Label objects (this label designates the NEW instruction that created
-     * this uninitialized value). This field is <tt>null</tt> for unreachable
+     * this uninitialized value). This field is {@code null} for unreachable
      * instructions.
      */
     public List locals;
@@ -79,14 +79,14 @@ public class AnalyzerAdapter extends MethodAdapter {
      * two elements, the second one being TOP). Reference types are represented
      * by String objects (representing internal names), and uninitialized types 
      * by Label objects (this label designates the NEW instruction that created
-     * this uninitialized value). This field is <tt>null</tt> for unreachable
+     * this uninitialized value). This field is {@code null} for unreachable
      * instructions.
      */
     public List stack;
 
     /**
      * The labels that designate the next instruction to be visited. May be
-     * <tt>null</tt>.
+     * {@code null}.
      */
     private List labels;
 
@@ -117,7 +117,7 @@ public class AnalyzerAdapter extends MethodAdapter {
      * @param name the method's name.
      * @param desc the method's descriptor (see {@link Type Type}).
      * @param mv the method visitor to which this adapter delegates calls. May
-     *        be <tt>null</tt>.
+     *        be {@code null}.
      */
     public AnalyzerAdapter(
         final String owner,

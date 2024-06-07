@@ -72,7 +72,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
     private String match = "";
 
     /**
-     * <tt>true</tt> if the maximum stack size and number of local variables
+     * {@code true} if the maximum stack size and number of local variables
      * must be automatically computed.
      */
     protected boolean computeMax;
@@ -330,7 +330,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
      * Constructs a new {@link ASMContentHandler ASMContentHandler} object.
      *
      * @param os output stream to write generated class.
-     * @param computeMax <tt>true</tt> if the maximum stack size and the
+     * @param computeMax {@code true} if the maximum stack size and the
      *        maximum number of local variables must be automatically computed.
      *        This value is passed to {@link ClassWriter ClassWriter} instance.
      */

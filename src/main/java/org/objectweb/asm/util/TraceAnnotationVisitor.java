@@ -44,7 +44,7 @@ public class TraceAnnotationVisitor extends TraceAbstractVisitor implements
 
     /**
      * The {@link AnnotationVisitor} to which this visitor delegates calls. May
-     * be <tt>null</tt>.
+     * be {@code null}.
      */
     protected AnnotationVisitor av;
 

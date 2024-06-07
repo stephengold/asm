@@ -55,7 +55,7 @@ public class TryCatchBlockNode {
 
     /**
      * Internal name of the type of exceptions handled by the handler. May be
-     * <tt>null</tt> to catch any exceptions (for "finally" blocks).
+     * {@code null} to catch any exceptions (for "finally" blocks).
      */
     public String type;
 
@@ -66,7 +66,7 @@ public class TryCatchBlockNode {
      * @param end end of the exception handler's scope (exclusive).
      * @param handler beginning of the exception handler's code.
      * @param type internal name of the type of exceptions handled by the
-     *        handler, or <tt>null</tt> to catch any exceptions (for "finally"
+     *        handler, or {@code null} to catch any exceptions (for "finally"
      *        blocks).
      */
     public TryCatchBlockNode(

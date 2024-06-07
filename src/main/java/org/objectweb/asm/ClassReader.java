@@ -234,7 +234,7 @@ public class ClassReader {
      * {@link Type#getInternalName() getInternalName}). For interfaces, the
      * superclass is {@link Object}.
      * 
-     * @return the internal name of superclass, or <tt>null</tt> for
+     * @return the internal name of superclass, or {@code null} for
      *         {@link Object} class.
      * 
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
@@ -249,7 +249,7 @@ public class ClassReader {
      * {@link Type#getInternalName() getInternalName}).
      * 
      * @return the array of internal names for all implemented interfaces or
-     *         <tt>null</tt>.
+     *         {@code null}.
      * 
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
@@ -1464,7 +1464,7 @@ public class ClassReader {
      * @param buf buffer to be used to call {@link #readUTF8 readUTF8},
      *        {@link #readClass(int,char[]) readClass} or
      *        {@link #readConst readConst}.
-     * @param visible <tt>true</tt> if the annotations to be read are visible
+     * @param visible {@code true} if the annotations to be read are visible
      *        at runtime.
      * @param mv the visitor that must visit the annotations.
      */
@@ -1783,9 +1783,9 @@ public class ClassReader {
      *        {@link #b b}, or -1 if the attribute to be read is not a code
      *        attribute. The 6 attribute header bytes, containing the type and
      *        the length of the attribute, are not taken into account here.
-     * @param labels the labels of the method's code, or <tt>null</tt> if the
+     * @param labels the labels of the method's code, or {@code null} if the
      *        attribute to be read is not a code attribute.
-     * @return the attribute that has been read, or <tt>null</tt> to skip this
+     * @return the attribute that has been read, or {@code null} to skip this
      *         attribute.
      */
     private Attribute readAttribute(

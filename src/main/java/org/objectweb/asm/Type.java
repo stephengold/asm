@@ -42,47 +42,47 @@ import java.lang.reflect.Method;
 public class Type {
 
     /**
-     * The sort of the <tt>void</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code void} type. See {@link #getSort getSort}.
      */
     public static final int VOID = 0;
 
     /**
-     * The sort of the <tt>boolean</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code boolean} type. See {@link #getSort getSort}.
      */
     public static final int BOOLEAN = 1;
 
     /**
-     * The sort of the <tt>char</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code char} type. See {@link #getSort getSort}.
      */
     public static final int CHAR = 2;
 
     /**
-     * The sort of the <tt>byte</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code byte} type. See {@link #getSort getSort}.
      */
     public static final int BYTE = 3;
 
     /**
-     * The sort of the <tt>short</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code short} type. See {@link #getSort getSort}.
      */
     public static final int SHORT = 4;
 
     /**
-     * The sort of the <tt>int</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code int} type. See {@link #getSort getSort}.
      */
     public static final int INT = 5;
 
     /**
-     * The sort of the <tt>float</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code float} type. See {@link #getSort getSort}.
      */
     public static final int FLOAT = 6;
 
     /**
-     * The sort of the <tt>long</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code long} type. See {@link #getSort getSort}.
      */
     public static final int LONG = 7;
 
     /**
-     * The sort of the <tt>double</tt> type. See {@link #getSort getSort}.
+     * The sort of the {@code double} type. See {@link #getSort getSort}.
      */
     public static final int DOUBLE = 8;
 
@@ -97,47 +97,47 @@ public class Type {
     public static final int OBJECT = 10;
 
     /**
-     * The <tt>void</tt> type.
+     * The {@code void} type.
      */
     public static final Type VOID_TYPE = new Type(VOID);
 
     /**
-     * The <tt>boolean</tt> type.
+     * The {@code boolean} type.
      */
     public static final Type BOOLEAN_TYPE = new Type(BOOLEAN);
 
     /**
-     * The <tt>char</tt> type.
+     * The {@code char} type.
      */
     public static final Type CHAR_TYPE = new Type(CHAR);
 
     /**
-     * The <tt>byte</tt> type.
+     * The {@code byte} type.
      */
     public static final Type BYTE_TYPE = new Type(BYTE);
 
     /**
-     * The <tt>short</tt> type.
+     * The {@code short} type.
      */
     public static final Type SHORT_TYPE = new Type(SHORT);
 
     /**
-     * The <tt>int</tt> type.
+     * The {@code int} type.
      */
     public static final Type INT_TYPE = new Type(INT);
 
     /**
-     * The <tt>float</tt> type.
+     * The {@code float} type.
      */
     public static final Type FLOAT_TYPE = new Type(FLOAT);
 
     /**
-     * The <tt>long</tt> type.
+     * The {@code long} type.
      */
     public static final Type LONG_TYPE = new Type(LONG);
 
     /**
-     * The <tt>double</tt> type.
+     * The {@code double} type.
      */
     public static final Type DOUBLE_TYPE = new Type(DOUBLE);
 
@@ -670,8 +670,8 @@ public class Type {
     /**
      * Returns the size of values of this type.
      * 
-     * @return the size of values of this type, i.e., 2 for <tt>long</tt> and
-     *         <tt>double</tt>, and 1 otherwise.
+     * @return the size of values of this type, i.e., 2 for {@code long} and
+     *         {@code double}, and 1 otherwise.
      */
     public int getSize() {
         return sort == LONG || sort == DOUBLE ? 2 : 1;
@@ -684,8 +684,8 @@ public class Type {
      *        ISTORE, IALOAD, IASTORE, IADD, ISUB, IMUL, IDIV, IREM, INEG, ISHL,
      *        ISHR, IUSHR, IAND, IOR, IXOR and IRETURN.
      * @return an opcode that is similar to the given opcode, but adapted to
-     *         this Java type. For example, if this type is <tt>float</tt> and
-     *         <tt>opcode</tt> is IRETURN, this method returns FRETURN.
+     *         this Java type. For example, if this type is {@code float} and
+     *         {@code opcode} is IRETURN, this method returns FRETURN.
      */
     public int getOpcode(final int opcode) {
         if (opcode == Opcodes.IALOAD || opcode == Opcodes.IASTORE) {
@@ -742,7 +742,7 @@ public class Type {
      * Tests if the given object is equal to this type.
      * 
      * @param o the object to be compared to this type.
-     * @return <tt>true</tt> if the given object is equal to this type.
+     * @return {@code true} if the given object is equal to this type.
      */
     @Override
     public boolean equals(final Object o) {

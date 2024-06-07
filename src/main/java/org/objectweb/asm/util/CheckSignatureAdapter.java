@@ -85,13 +85,13 @@ public class CheckSignatureAdapter implements SignatureVisitor {
     private int state;
 
     /**
-     * <tt>true</tt> if the checked type signature can be 'V'.
+     * {@code true} if the checked type signature can be 'V'.
      */
     private boolean canBeVoid;
 
     /**
      * The visitor to which this adapter must delegate calls. May be
-     * <tt>null</tt>.
+     * {@code null}.
      */
     private final SignatureVisitor sv;
 
@@ -102,7 +102,7 @@ public class CheckSignatureAdapter implements SignatureVisitor {
      *        {@link #CLASS_SIGNATURE}, {@link #METHOD_SIGNATURE} and
      *        {@link #TYPE_SIGNATURE}.
      * @param sv the visitor to which this adapter must delegate calls. May be
-     *        <tt>null</tt>.
+     *        {@code null}.
      */
     public CheckSignatureAdapter(final int type, final SignatureVisitor sv) {
         this.type = type;

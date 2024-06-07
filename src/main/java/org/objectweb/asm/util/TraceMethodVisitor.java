@@ -52,7 +52,7 @@ public class TraceMethodVisitor extends TraceAbstractVisitor implements
 
     /**
      * The {@link MethodVisitor} to which this visitor delegates calls. May be
-     * <tt>null</tt>.
+     * {@code null}.
      */
     protected MethodVisitor mv;
 
@@ -87,7 +87,7 @@ public class TraceMethodVisitor extends TraceAbstractVisitor implements
      * Constructs a new {@link TraceMethodVisitor}.
      * 
      * @param mv the {@link MethodVisitor} to which this visitor delegates
-     *        calls. May be <tt>null</tt>.
+     *        calls. May be {@code null}.
      */
     public TraceMethodVisitor(final MethodVisitor mv) {
         this.labelNames = new HashMap();

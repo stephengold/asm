@@ -53,7 +53,7 @@ public interface Interpreter {
      * exception handler variable and with {@code null} type 
      * for variables reserved by long and double types.
      * 
-     * @param type a primitive or reference type, or <tt>null</tt> to
+     * @param type a primitive or reference type, or {@code null} to
      *        represent an uninitialized value.
      * @return a value that represents the given type. The size of the returned
      *         value must be equal to the size of the given type.
@@ -84,7 +84,7 @@ public interface Interpreter {
      * @param insn the bytecode instruction to be interpreted.
      * @param value the value that must be moved by the instruction.
      * @return the result of the interpretation of the given instruction. The
-     *         returned value must be <tt>equal</tt> to the given value.
+     *         returned value must be {@code equal} to the given value.
      * @throws AnalyzerException if an error occurred during the interpretation.
      */
     Value copyOperation(AbstractInsnNode insn, Value value)
@@ -171,8 +171,8 @@ public interface Interpreter {
      * 
      * @param v a value.
      * @param w another value.
-     * @return the merged value. If the merged value is equal to <tt>v</tt>,
-     *         this method <i>must</i> return <tt>v</tt>.
+     * @return the merged value. If the merged value is equal to {@code v},
+     *         this method <i>must</i> return {@code v}.
      */
     Value merge(Value v, Value w);
 }

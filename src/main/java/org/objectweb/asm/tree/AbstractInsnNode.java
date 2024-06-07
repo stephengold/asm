@@ -172,7 +172,7 @@ public abstract class AbstractInsnNode {
      * belongs, if any.
      * 
      * @return the previous instruction in the list to which this instruction
-     *         belongs, if any. May be <tt>null</tt>.
+     *         belongs, if any. May be {@code null}.
      */
     public AbstractInsnNode getPrevious() {
         return prev;
@@ -183,7 +183,7 @@ public abstract class AbstractInsnNode {
      * belongs, if any.
      * 
      * @return the next instruction in the list to which this instruction
-     *         belongs, if any. May be <tt>null</tt>.
+     *         belongs, if any. May be {@code null}.
      */
     public AbstractInsnNode getNext() {
         return next;

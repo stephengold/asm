@@ -67,7 +67,7 @@ public class ASMifierAbstractVisitor extends AbstractVisitor {
      * Prints the ASM code that generates the given annotation.
      * 
      * @param desc the class descriptor of the annotation class.
-     * @param visible <tt>true</tt> if the annotation is visible at runtime.
+     * @param visible {@code true} if the annotation is visible at runtime.
      * @return a visitor to visit the annotation values.
      */
     public AnnotationVisitor visitAnnotation(
@@ -119,7 +119,7 @@ public class ASMifierAbstractVisitor extends AbstractVisitor {
      * buffer.
      * 
      * @param cst an {@link Integer}, {@link Float}, {@link Long},
-     *        {@link Double} or {@link String} object. May be <tt>null</tt>.
+     *        {@link Double} or {@link String} object. May be {@code null}.
      */
     void appendConstant(final Object cst) {
         appendConstant(buf, cst);
@@ -131,7 +131,7 @@ public class ASMifierAbstractVisitor extends AbstractVisitor {
      * 
      * @param buf a string buffer.
      * @param cst an {@link Integer}, {@link Float}, {@link Long},
-     *        {@link Double} or {@link String} object. May be <tt>null</tt>.
+     *        {@link Double} or {@link String} object. May be {@code null}.
      */
     static void appendConstant(final StringBuffer buf, final Object cst) {
         if (cst == null) {

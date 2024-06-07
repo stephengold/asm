@@ -46,7 +46,7 @@ import java.util.Map;
  * visit method checks some preconditions based <i>only</i> on its arguments -
  * such as the fact that the given opcode is correct for a given visit method),
  * but does <i>not</i> check the <i>sequence</i> of instructions. For example,
- * in a method whose signature is <tt>void m ()</tt>, the invalid instruction
+ * in a method whose signature is {@code void m ()}, the invalid instruction
  * IRETURN, or the invalid sequence IADD L2I will <i>not</i> be detected by
  * this code adapter.
  * 
@@ -55,17 +55,17 @@ import java.util.Map;
 public class CheckMethodAdapter extends MethodAdapter {
 
     /**
-     * <tt>true</tt> if the visitCode method has been called.
+     * {@code true} if the visitCode method has been called.
      */
     private boolean startCode;
 
     /**
-     * <tt>true</tt> if the visitMaxs method has been called.
+     * {@code true} if the visitMaxs method has been called.
      */
     private boolean endCode;
 
     /**
-     * <tt>true</tt> if the visitEnd method has been called.
+     * {@code true} if the visitEnd method has been called.
      */
     private boolean endMethod;
 
@@ -805,8 +805,8 @@ public class CheckMethodAdapter extends MethodAdapter {
      * @param name the string to be checked.
      * @param start index of the first character of the identifier (inclusive).
      * @param end index of the last character of the identifier (exclusive). -1
-     *        is equivalent to <tt>name.length()</tt> if name is not
-     *        <tt>null</tt>.
+     *        is equivalent to {@code name.length()} if name is not
+     *        {@code null}.
      * @param msg a message to be used in case of error.
      */
     static void checkIdentifier(
@@ -888,8 +888,8 @@ public class CheckMethodAdapter extends MethodAdapter {
      * @param name the string to be checked.
      * @param start index of the first character of the identifier (inclusive).
      * @param end index of the last character of the identifier (exclusive). -1
-     *        is equivalent to <tt>name.length()</tt> if name is not
-     *        <tt>null</tt>.
+     *        is equivalent to {@code name.length()} if name is not
+     *        {@code null}.
      * @param msg a message to be used in case of error.
      */
     static void checkInternalName(
@@ -922,7 +922,7 @@ public class CheckMethodAdapter extends MethodAdapter {
      * Checks that the given string is a valid type descriptor.
      * 
      * @param desc the string to be checked.
-     * @param canBeVoid <tt>true</tt> if <tt>V</tt> can be considered valid.
+     * @param canBeVoid {@code true} if {@code V} can be considered valid.
      */
     static void checkDesc(final String desc, final boolean canBeVoid) {
         int end = checkDesc(desc, 0, canBeVoid);
@@ -936,7 +936,7 @@ public class CheckMethodAdapter extends MethodAdapter {
      * 
      * @param desc the string to be checked.
      * @param start index of the first character of the identifier (inclusive).
-     * @param canBeVoid <tt>true</tt> if <tt>V</tt> can be considered valid.
+     * @param canBeVoid {@code true} if {@code V} can be considered valid.
      * @return the index of the last character of the type descriptor, plus one.
      */
     static int checkDesc(
@@ -1331,7 +1331,7 @@ public class CheckMethodAdapter extends MethodAdapter {
      * the label has been visited.
      * 
      * @param label the label to be checked.
-     * @param checkVisited <tt>true</tt> to check that the label has been
+     * @param checkVisited {@code true} to check that the label has been
      *        visited.
      * @param msg a message to be used in case of error.
      */

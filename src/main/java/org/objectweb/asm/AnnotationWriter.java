@@ -48,7 +48,7 @@ final class AnnotationWriter implements AnnotationVisitor {
     private int size;
 
     /**
-     * <tt>true<tt> if values are named, <tt>false</tt> otherwise. Annotation 
+     * {@code true} if values are named, {@code false} otherwise. Annotation 
      * writers used for annotation default and annotation arrays use unnamed
      * values.
      */
@@ -91,10 +91,10 @@ final class AnnotationWriter implements AnnotationVisitor {
      * Constructs a new {@link AnnotationWriter}.
      * 
      * @param cw the class writer to which this annotation must be added.
-     * @param named <tt>true<tt> if values are named, <tt>false</tt> otherwise.
+     * @param named {@code true{@code  if values are named, {@code false} otherwise.
      * @param bv where the annotation values must be stored.
      * @param parent where the number of annotation values must be stored.
-     * @param offset where in <tt>parent</tt> the number of annotation values must 
+     * @param offset where in {@code parent} the number of annotation values must 
      *      be stored.
      */
     AnnotationWriter(

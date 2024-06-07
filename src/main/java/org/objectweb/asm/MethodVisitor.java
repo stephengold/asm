@@ -31,16 +31,16 @@ package org.objectweb.asm;
 
 /**
  * A visitor to visit a Java method. The methods of this interface must be
- * called in the following order: [ <tt>visitAnnotationDefault</tt> ] (
- * <tt>visitAnnotation</tt> | <tt>visitParameterAnnotation</tt> |
- * <tt>visitAttribute</tt> )* [ <tt>visitCode</tt> ( <tt>visitFrame</tt> |
- * <tt>visit<i>X</i>Insn</tt> | <tt>visitLabel</tt> | <tt>visitTryCatchBlock</tt> |
- * <tt>visitLocalVariable</tt> | <tt>visitLineNumber</tt>)* <tt>visitMaxs</tt> ]
- * <tt>visitEnd</tt>. In addition, the <tt>visit<i>X</i>Insn</tt>
- * and <tt>visitLabel</tt> methods must be called in the sequential order of
- * the bytecode instructions of the visited code, <tt>visitTryCatchBlock</tt>
+ * called in the following order: [ {@code visitAnnotationDefault} ] (
+ * {@code visitAnnotation} | {@code visitParameterAnnotation} |
+ * {@code visitAttribute} )* [ {@code visitCode} ( {@code visitFrame} |
+ * {@code visitXInsn} | {@code visitLabel} | {@code visitTryCatchBlock} |
+ * {@code visitLocalVariable} | {@code visitLineNumber} )* {@code visitMaxs} ]
+ * {@code visitEnd}. In addition, the {@code visitXInsn}
+ * and {@code visitLabel} methods must be called in the sequential order of
+ * the bytecode instructions of the visited code, {@code visitTryCatchBlock}
  * must be called <i>before</i> the labels passed as arguments have been
- * visited, and the <tt>visitLocalVariable</tt> and <tt>visitLineNumber</tt>
+ * visited, and the {@code visitLocalVariable} and {@code visitLineNumber}
  * methods must be called <i>after</i> the labels passed as arguments have been
  * visited.
  * 
@@ -56,7 +56,7 @@ public interface MethodVisitor {
      * Visits the default value of this annotation interface method.
      * 
      * @return a visitor to the visit the actual default value of this
-     *         annotation interface method, or <tt>null</tt> if this visitor
+     *         annotation interface method, or {@code null} if this visitor
      *         is not interested in visiting this default value. The 'name'
      *         parameters passed to the methods of this annotation visitor are
      *         ignored. Moreover, exactly one visit method must be called on this
@@ -68,8 +68,8 @@ public interface MethodVisitor {
      * Visits an annotation of this method.
      * 
      * @param desc the class descriptor of the annotation class.
-     * @param visible <tt>true</tt> if the annotation is visible at runtime.
-     * @return a visitor to visit the annotation values, or <tt>null</tt> if
+     * @param visible {@code true} if the annotation is visible at runtime.
+     * @return a visitor to visit the annotation values, or {@code null} if
      *         this visitor is not interested in visiting this annotation.
      */
     AnnotationVisitor visitAnnotation(String desc, boolean visible);
@@ -79,8 +79,8 @@ public interface MethodVisitor {
      * 
      * @param parameter the parameter index.
      * @param desc the class descriptor of the annotation class.
-     * @param visible <tt>true</tt> if the annotation is visible at runtime.
-     * @return a visitor to visit the annotation values, or <tt>null</tt> if
+     * @param visible {@code true} if the annotation is visible at runtime.
+     * @return a visitor to visit the annotation values, or {@code null} if
      *         this visitor is not interested in visiting this annotation.
      */
     AnnotationVisitor visitParameterAnnotation(
@@ -279,7 +279,7 @@ public interface MethodVisitor {
      * @param cst the constant to be loaded on the stack. This parameter must be
      *        a non-null {@link Integer}, a {@link Float}, a {@link Long}, a
      *        {@link Double} a {@link String} (or a {@link Type} for
-     *        <tt>.class</tt> constants, for classes whose version is 49.0 or
+     *        {@code .class} constants, for classes whose version is 49.0 or
      *        more).
      */
     void visitLdcInsn(Object cst);
@@ -298,8 +298,8 @@ public interface MethodVisitor {
      * @param min the minimum key value.
      * @param max the maximum key value.
      * @param dflt beginning of the default handler block.
-     * @param labels beginnings of the handler blocks. <tt>labels[i]</tt> is
-     *        the beginning of the handler block for the <tt>min + i</tt> key.
+     * @param labels beginnings of the handler blocks. {@code labels[i]} is
+     *        the beginning of the handler block for the {@code min + i} key.
      */
     void visitTableSwitchInsn(int min, int max, Label dflt, Label[] labels);
 
@@ -308,8 +308,8 @@ public interface MethodVisitor {
      * 
      * @param dflt beginning of the default handler block.
      * @param keys the values of the keys.
-     * @param labels beginnings of the handler blocks. <tt>labels[i]</tt> is
-     *        the beginning of the handler block for the <tt>keys[i]</tt> key.
+     * @param labels beginnings of the handler blocks. {@code labels[i]} is
+     *        the beginning of the handler block for the {@code keys[i]} key.
      */
     void visitLookupSwitchInsn(Label dflt, int[] keys, Label[] labels);
 
@@ -332,7 +332,7 @@ public interface MethodVisitor {
      * @param end end of the exception handler's scope (exclusive).
      * @param handler beginning of the exception handler's code.
      * @param type internal name of the type of exceptions handled by the
-     *        handler, or <tt>null</tt> to catch any exceptions (for "finally"
+     *        handler, or {@code null} to catch any exceptions (for "finally"
      *        blocks).
      * @throws IllegalArgumentException if one of the labels has already been
      *         visited by this visitor (by the {@link #visitLabel visitLabel}
@@ -346,7 +346,7 @@ public interface MethodVisitor {
      * @param name the name of a local variable.
      * @param desc the type descriptor of this local variable.
      * @param signature the type signature of this local variable. May be
-     *        <tt>null</tt> if the local variable type does not use generic
+     *        {@code null} if the local variable type does not use generic
      *        types.
      * @param start the first instruction corresponding to the scope of this
      *        local variable (inclusive).
@@ -371,7 +371,7 @@ public interface MethodVisitor {
      * @param line a line number. This number refers to the source file from
      *        which the class was compiled.
      * @param start the first instruction corresponding to this line number.
-     * @throws IllegalArgumentException if <tt>start</tt> has not already been
+     * @throws IllegalArgumentException if {@code start} has not already been
      *         visited by this visitor (by the {@link #visitLabel visitLabel}
      *         method).
      */

@@ -54,8 +54,8 @@ import org.objectweb.asm.tree.analysis.Frame;
  * precisely this class adapter checks each method call individually, based
  * <i>only</i> on its arguments, but does <i>not</i> check the <i>sequence</i>
  * of method calls. For example, the invalid sequence
- * <tt>visitField(ACC_PUBLIC, "i", "I", null)</tt> <tt>visitField(ACC_PUBLIC,
- * "i", "D", null)</tt>
+ * {@code visitField(ACC_PUBLIC, "i", "I", null)} {@code visitField(ACC_PUBLIC,
+ * "i", "D", null)}
  * will <i>not</i> be detected by this class adapter.
  * 
  * <p>{@code CheckClassAdapter} can be also used to verify bytecode
@@ -119,22 +119,22 @@ import org.objectweb.asm.tree.analysis.Frame;
 public class CheckClassAdapter extends ClassAdapter {
 
     /**
-     * <tt>true</tt> if the visit method has been called.
+     * {@code true} if the visit method has been called.
      */
     private boolean start;
 
     /**
-     * <tt>true</tt> if the visitSource method has been called.
+     * {@code true} if the visitSource method has been called.
      */
     private boolean source;
 
     /**
-     * <tt>true</tt> if the visitOuterClass method has been called.
+     * {@code true} if the visitOuterClass method has been called.
      */
     private boolean outer;
 
     /**
-     * <tt>true</tt> if the visitEnd method has been called.
+     * {@code true} if the visitEnd method has been called.
      */
     private boolean end;
 

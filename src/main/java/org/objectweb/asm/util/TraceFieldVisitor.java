@@ -45,7 +45,7 @@ public class TraceFieldVisitor extends TraceAbstractVisitor implements
 
     /**
      * The {@link FieldVisitor} to which this visitor delegates calls. May be
-     * <tt>null</tt>.
+     * {@code null}.
      */
     protected FieldVisitor fv;
 
