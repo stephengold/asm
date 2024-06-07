@@ -72,7 +72,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
  * system property {@code javax.xml.transform.TransformerFactory} must be set
  * to one of the following values.
  * 
- * <blockquote> <table border="1" cellspacing="0" cellpadding="3"> <tr> <td>jd.xslt</td>
+ * <blockquote> <table border="1"> <tr> <td>jd.xslt</td>
  * <td>jd.xml.xslt.trax.TransformerFactoryImpl</td> </tr>
  * 
  * <tr> <td>Saxon</td> <td>net.sf.saxon.TransformerFactoryImpl</td> </tr>
