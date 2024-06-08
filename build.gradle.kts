@@ -164,9 +164,7 @@ tasks.named("publishMavenPublicationToMavenLocal") {
     dependsOn("assemble")
     doLast { println("installed locally as " + baseName) }
 }
-tasks.named("publishMavenPublicationToOSSRHRepository") {
-    dependsOn("assemble")
-}
+tasks.named("publishMavenPublicationToOSSRHRepository") { dependsOn("assemble") }
 
 // Register signing tasks:
 
