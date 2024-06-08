@@ -62,7 +62,7 @@ tasks.register<Jar>("sourcesJar") {
     archiveBaseName.set(baseName)
     archiveClassifier.set("sources")
     description = "Creates a JAR of Java sourcecode."
-    from(sourceSets.main.get().output) // default is ".allSource", which includes resources
+    from(sourceSets.main.get().java) // default is ".allSource", which includes resources
 }
 
 tasks.named("assemble") { dependsOn("module", "moduleAsc", "pom", "pomAsc") }
