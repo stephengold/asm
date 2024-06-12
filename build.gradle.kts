@@ -151,8 +151,8 @@ publishing {
     repositories {
         maven {
             credentials {
-                username = if (hasProperty("ossrhUsername")) property("ossrhUsername").toString() else "Unknown user"
-                password = if (hasProperty("ossrhPassword")) property("ossrhPassword").toString() else "Unknown password"
+                username = if (hasProperty("ossrhUsername")) property("ossrhUsername") as String else "Unknown user"
+                password = if (hasProperty("ossrhPassword")) property("ossrhPassword") as String else "Unknown password"
             }
             name = "OSSRH"
             url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2")
