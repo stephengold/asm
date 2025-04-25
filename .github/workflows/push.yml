@@ -19,7 +19,7 @@ jobs:
 
   Java11-Linux:
     if: contains(toJson(github.event.commits), '[ci skip] ') == false
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/setup-java@v4
         with:
@@ -31,7 +31,7 @@ jobs:
 
   Java17-MacOS:
     if: contains(toJson(github.event.commits), '[ci skip] ') == false
-    runs-on: macOS-14
+    runs-on: macOS-15
     steps:
       - uses: actions/setup-java@v4
         with:
@@ -42,7 +42,7 @@ jobs:
 
   Java17-Windows:
     if: contains(toJson(github.event.commits), '[ci skip] ') == false
-    runs-on: windows-2022
+    runs-on: windows-2025
     steps:
       - uses: actions/setup-java@v4
         with:
