@@ -14,7 +14,7 @@ jobs:
           distribution: 'zulu'
           java-version: 8
       - uses: actions/checkout@v4
-      - run: ./gradlew build --console=plain --stacktrace
+      - run: ./gradlew build install --console=plain --stacktrace
         shell: bash
 
   Java11-Linux:
@@ -27,7 +27,7 @@ jobs:
           java-version: 11
       - uses: actions/checkout@v4
       - uses: gradle/actions/wrapper-validation@v4
-      - run: ./gradlew build --console=plain --stacktrace
+      - run: ./gradlew build install --console=plain --stacktrace
 
   Java17-MacOS:
     if: contains(toJson(github.event.commits), '[ci skip] ') == false
@@ -38,7 +38,7 @@ jobs:
           distribution: 'zulu'
           java-version: 17
       - uses: actions/checkout@v4
-      - run: ./gradlew build --console=plain --stacktrace
+      - run: ./gradlew build install --console=plain --stacktrace
 
   Java17-Windows:
     if: contains(toJson(github.event.commits), '[ci skip] ') == false
@@ -49,5 +49,5 @@ jobs:
           distribution: 'zulu'
           java-version: 17
       - uses: actions/checkout@v4
-      - run: ./gradlew build --console=plain --stacktrace
+      - run: ./gradlew build install --console=plain --stacktrace
         shell: bash
