@@ -3,7 +3,7 @@
 plugins {
     `java-library`  // to build JVM libraries
     `maven-publish` // to publish artifacts to Maven repositories
-    `signing`       // to sign artifacts for publication
+    signing         // to sign artifacts for publication
 }
 
 val group = "com.github.stephengold"
