@@ -1,4 +1,4 @@
-// Gradle script to build the asm project
+// Gradle script to build and publish the asm project
 
 plugins {
     `java-library`  // to build JVM libraries
@@ -174,11 +174,12 @@ tasks.named("publishMavenPublicationToMavenLocal") {
 }
 tasks.named("publishMavenPublicationToCentralRepository") { dependsOn("assemble") }
 
-// Register signing tasks:
+// Register tasks to sign the Maven artifacts for publication:
 
 // Signing relies on the existence of 3 properties
 // (signing.keyId, signing.password, and signing.secretKeyRingFile)
-// which should be stored in ~/.gradle/gradle.properties
+// which should be set in the ~/.gradle/gradle.properties file
+// or by -P options on the command line.
 
 signing {
     sign(publishing.publications["maven"])
