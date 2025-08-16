@@ -10,9 +10,9 @@ val group = "com.github.stephengold"
 val artifact = "asm-all"
 val libraryVersion = "3.1.2-SNAPSHOT"
 val baseName = "${artifact}-${libraryVersion}" // for artifacts
-val websiteUrl = "https://github.com/stephengold/asm"
 val javaVendor = System.getProperty("java.vendor")
 val javaVersion = JavaVersion.current()
+val websiteUrl = "https://github.com/stephengold/asm"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
