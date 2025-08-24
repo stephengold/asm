@@ -21,24 +21,20 @@ java {
 
 tasks.withType<JavaCompile>().all { // Java compile-time options:
     options.compilerArgs.add("-Xdiags:verbose")
-    if (javaVersion.isCompatibleWith(JavaVersion.VERSION_14)) {
-        // Suppress warnings that source value 7 is obsolete.
-        options.compilerArgs.add("-Xlint:-options")
-    }
+
+    // Suppress warnings that source value 7 is obsolete.
+    options.compilerArgs.add("-Xlint:-options")
+
     //options.compilerArgs.add("-Xlint:unchecked")
     options.setDeprecation(true) // to provide detailed deprecation warnings
     options.encoding = "UTF-8"
-    if (javaVersion.isCompatibleWith(JavaVersion.VERSION_1_10)) {
-        options.release = 7
-    }
+
+    options.release = 7
 }
 
 tasks.withType<Javadoc>().all {
-    // Disable doclint for JDK8+.
-    if (javaVersion.isJava8Compatible()) {
-        (options as CoreJavadocOptions).apply {
-            addStringOption("Xdoclint:none", "-quiet")
-        }
+    (options as CoreJavadocOptions).apply {
+        addStringOption("Xdoclint:none", "-quiet")
     }
 }
 
