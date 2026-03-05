@@ -19,7 +19,7 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_7
 }
 
-tasks.withType<JavaCompile>().all { // Java compile-time options:
+tasks.withType<JavaCompile>().configureEach { // Java compile-time options:
     options.compilerArgs.add("-Xdiags:verbose")
 
     // Suppress warnings that source value 7 is obsolete.
@@ -32,7 +32,7 @@ tasks.withType<JavaCompile>().all { // Java compile-time options:
     options.release = 7
 }
 
-tasks.withType<Javadoc>().all {
+tasks.withType<Javadoc>().configureEach {
     (options as CoreJavadocOptions).apply {
         addStringOption("Xdoclint:none", "-quiet")
     }
@@ -180,7 +180,7 @@ tasks.named("publishMavenPublicationToCentralRepository") { dependsOn("assemble"
 signing {
     sign(publishing.publications["maven"])
 }
-tasks.withType<Sign>().all {
+tasks.withType<Sign>().configureEach {
     onlyIf { project.hasProperty("signing.keyId") }
 }
 tasks.named("signMavenPublication") { dependsOn("module") }
